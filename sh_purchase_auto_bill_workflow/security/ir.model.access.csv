@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sh_auto_purchase_workflow,access_sh_auto_purchase_workflow,model_sh_auto_purchase_workflow,sh_purchase_auto_bill_workflow.group_show_purchase_workflow_menu,1,1,1,1
+access_sh_auto_purchase_workflow_all,sh.auto.purchase.workflow.all,model_sh_auto_purchase_workflow,purchase.group_purchase_user,1,0,0,0

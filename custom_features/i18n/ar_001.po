@@ -1,0 +1,926 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* custom_features
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-24 18:25+0000\n"
+"PO-Revision-Date: 2025-09-24 18:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: custom_features
+#. odoo-python
+#: code:addons/custom_features/models/account_move2.py:0
+msgid "%d reverse journal entries created successfully"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__cash_count
+#: model:ir.model.fields,help:custom_features.field_account_move__cash_count
+msgid "1 if this is a cash invoice, 0 otherwise"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__credit_count
+#: model:ir.model.fields,help:custom_features.field_account_move__credit_count
+msgid "1 if this is a credit invoice, 0 otherwise"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.constraint,message:custom_features.constraint_product_template_barcode_unique
+msgid "A product with this barcode already exists."
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_account_move_reversal
+msgid "Account Move Reversal"
+msgstr "عكس حركة الحساب "
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_res_users__allowed_warehouse_ids
+msgid "Allowed Warehouses for Stock View"
+msgstr "المخازن المسموح برؤيتها"
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__return_amount
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__return_cash_amount
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__return_credit_amount
+#: model:ir.model.fields,help:custom_features.field_account_move__return_amount
+#: model:ir.model.fields,help:custom_features.field_account_move__return_cash_amount
+#: model:ir.model.fields,help:custom_features.field_account_move__return_credit_amount
+msgid "Amount for credit notes/returns (negative for regular credit notes)"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.report_invoice_document_custom
+#: model_terms:ir.ui.view,arch_db:custom_features.report_saleorder_document_custom
+msgid "Bacon Burger"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_res_company__branch_code
+msgid "Branch Code"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_res_partner__cr_no
+#: model:ir.model.fields,field_description:custom_features.field_res_users__cr_no
+msgid "CR Number"
+msgstr "رقم التسجيل التجاري"
+
+#. module: custom_features
+#: model:ir.model.fields.selection,name:custom_features.selection__account_move__workflow_type__cash
+#: model:ir.model.fields.selection,name:custom_features.selection__account_move_reversal__type__cash
+msgid "Cash"
+msgstr "كاش"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Cash Amount"
+msgstr "مجموع الكاش"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__cash_commission_value
+#: model:ir.model.fields,field_description:custom_features.field_account_move__cash_commission_value
+msgid "Cash Commission Value"
+msgstr "قيمة العمولة الكاش"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Cash Count"
+msgstr "عدد الكاش"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__cash_count
+#: model:ir.model.fields,field_description:custom_features.field_account_move__cash_count
+msgid "Cash Invoice"
+msgstr "فواتير الكاش"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__cash_amount
+#: model:ir.model.fields,field_description:custom_features.field_account_move__cash_amount
+msgid "Cash Invoice Amount"
+msgstr "مجموع فواتير الكاش"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Cash Invoices"
+msgstr "فواتير الكاش"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_sale_order_line__categ_id
+msgid "Category"
+msgstr "القسم"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_stock_details_wizard_form
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_res_partner__cr_no
+#: model:ir.model.fields,help:custom_features.field_res_users__cr_no
+msgid "Commercial Registration Number"
+msgstr "رقم التسجيل التجاري"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__commission_value
+#: model:ir.model.fields,field_description:custom_features.field_account_move__commission_value
+msgid "Commission Value"
+msgstr "قيمة العمولة"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Company"
+msgstr "الشركة"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_move__cost_price
+msgid "Cost"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__return_count
+#: model:ir.model.fields,help:custom_features.field_account_move__return_count
+msgid "Count of return invoices (credit notes)"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__create_return_picking
+#: model:ir.model.fields,field_description:custom_features.field_account_move__create_return_picking
+msgid "Create Receipt Picking"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_tree_with_reverse_button
+#: model_terms:ir.ui.view,arch_db:custom_features.view_vendor_invoice_tree_with_reverse_button
+msgid "Create Reverse Entries"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_details_wizard__create_uid
+#: model:ir.model.fields,field_description:custom_features.field_stock_return_picking_exchange_line__create_uid
+#: model:ir.model.fields,field_description:custom_features.field_warehouse_stock_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_details_wizard__create_date
+#: model:ir.model.fields,field_description:custom_features.field_stock_return_picking_exchange_line__create_date
+#: model:ir.model.fields,field_description:custom_features.field_warehouse_stock_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields.selection,name:custom_features.selection__account_move__workflow_type__credit
+#: model:ir.model.fields.selection,name:custom_features.selection__account_move_reversal__type__credit
+msgid "Credit"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Credit Amount"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__credit_commission_value
+#: model:ir.model.fields,field_description:custom_features.field_account_move__credit_commission_value
+msgid "Credit Commission Value"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Credit Count"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__credit_count
+#: model:ir.model.fields,field_description:custom_features.field_account_move__credit_count
+msgid "Credit Invoice"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__credit_amount
+#: model:ir.model.fields,field_description:custom_features.field_account_move__credit_amount
+msgid "Credit Invoice Amount"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Credit Invoices"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Current Month"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_stock_move__product_qty_available
+msgid ""
+"Current quantity of products.\n"
+"In a context with a single Stock Location, this includes goods stored at this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods stored in the Stock Location of this Warehouse, or any of its children.\n"
+"stored in the Stock Location of the Warehouse of this Shop, or any of its children.\n"
+"Otherwise, this includes goods stored in any Stock Location with 'internal' type."
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Day"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_res_config_settings__default_partner_id
+#: model_terms:ir.ui.view,arch_db:custom_features.res_config_settings_view_form_inherit_sale
+msgid "Default Customer"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_stock_return_picking_exchange_line__uom_id
+msgid "Default unit of measure used for all stock operations."
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_product_product__description
+#: model:ir.model.fields,field_description:custom_features.field_product_template__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_details_wizard__display_name
+#: model:ir.model.fields,field_description:custom_features.field_stock_return_picking_exchange_line__display_name
+#: model:ir.model.fields,field_description:custom_features.field_warehouse_stock_line__display_name
+msgid "Display Name"
+msgstr "الاسم"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_res_company__english_city_name
+msgid "English City Name"
+msgstr "اسم المدينة باللغة الإنجليزية"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_res_company__english_company_name
+msgid "English Company Name"
+msgstr "اسم الشركة باللغة الإنجليزية"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_product_template_form_custom
+msgid "Enter product description..."
+msgstr "الوصف"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_return_picking_exchange_line__product_id
+msgid "Exchange Product"
+msgstr "المنتجات البديلة"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_return_picking__exchange_product_lines
+#: model_terms:ir.ui.view,arch_db:custom_features.view_stock_return_picking_form_inherit
+msgid "Exchange Products"
+msgstr "المنتجات البديلة"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_details_wizard__id
+#: model:ir.model.fields,field_description:custom_features.field_stock_return_picking_exchange_line__id
+#: model:ir.model.fields,field_description:custom_features.field_warehouse_stock_line__id
+msgid "ID"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__create_return_picking
+#: model:ir.model.fields,help:custom_features.field_account_move__create_return_picking
+msgid ""
+"If checked, system will automatically create a receipt picking when "
+"confirming the credit note"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_users_form_inherit_warehouse_access
+msgid ""
+"If no warehouses are selected, the user will be able to see all warehouses "
+"in the stock details."
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__show_in_outstanding
+#: model:ir.model.fields,help:custom_features.field_account_move__show_in_outstanding
+msgid ""
+"If unchecked, this entry will not appear in Outstanding Credits/Debits "
+"widget"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.actions.act_window,name:custom_features.action_invoice_analysis_pivot
+#: model:ir.ui.menu,name:custom_features.menu_invoice_analysis
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Invoice Analysis"
+msgstr "تحليل الفواتير"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_line_pivot_custom_features
+msgid "Invoice Line Analysis"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Invoice Type"
+msgstr "نوع الفاتورة"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Invoice Workflow Analysis"
+msgstr "تحليل سير عمل الفاتورة"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__is_cash_invoice
+#: model:ir.model.fields,field_description:custom_features.field_account_move__is_cash_invoice
+msgid "Is Cash Invoice"
+msgstr "فاتورة نقدي"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__is_credit_invoice
+#: model:ir.model.fields,field_description:custom_features.field_account_move__is_credit_invoice
+msgid "Is Credit Invoice"
+msgstr "فاتورة اجل"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__is_return
+#: model:ir.model.fields,field_description:custom_features.field_account_move__is_return
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Is Return"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_res_partner__is_specialist
+#: model:ir.model.fields,field_description:custom_features.field_res_users__is_specialist
+msgid "Is Specialist"
+msgstr "متخصص"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Last Month"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_details_wizard__write_uid
+#: model:ir.model.fields,field_description:custom_features.field_stock_return_picking_exchange_line__write_uid
+#: model:ir.model.fields,field_description:custom_features.field_warehouse_stock_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_details_wizard__write_date
+#: model:ir.model.fields,field_description:custom_features.field_stock_return_picking_exchange_line__write_date
+#: model:ir.model.fields,field_description:custom_features.field_warehouse_stock_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_warehouse_stock_line__location_name
+msgid "Location"
+msgstr "الموقع"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_details_wizard__warehouse_stock_ids
+msgid "Location Stock"
+msgstr "المخزون في الموقع"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_warehouse_stock_line
+msgid "Location Stock Line"
+msgstr "خط مخزون الموقع"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Month"
+msgstr "الشهر"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.report_invoice_document_custom
+#: model_terms:ir.ui.view,arch_db:custom_features.report_saleorder_document_custom
+msgid "Name"
+msgstr "الاسم"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__net_cash_sales
+#: model:ir.model.fields,field_description:custom_features.field_account_move__net_cash_sales
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Net Cash Sales"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__net_credit_sales
+#: model:ir.model.fields,field_description:custom_features.field_account_move__net_credit_sales
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Net Credit Sales"
+msgstr "صافي مبيعات الاجل"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__net_sales2
+#: model:ir.model.fields,field_description:custom_features.field_account_move__net_sales2
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Net Sales"
+msgstr "صافي مبيعات"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__net_sales_before_return
+#: model:ir.model.fields,field_description:custom_features.field_account_move__net_sales_before_return
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Net Sales Before Return"
+msgstr "صافي مبيعات قبل الارجاع"
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__net_cash_sales
+#: model:ir.model.fields,help:custom_features.field_account_move__net_cash_sales
+msgid "Net cash sales amount"
+msgstr "صافي مبيعات نقدي"
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__net_credit_sales
+#: model:ir.model.fields,help:custom_features.field_account_move__net_credit_sales
+msgid "Net credit sales amount"
+msgstr "صافي مبيعات الاجل"
+
+#. module: custom_features
+#. odoo-python
+#: code:addons/custom_features/models/account_move2.py:0
+msgid "Outstanding credits"
+msgstr ""
+
+#. module: custom_features
+#. odoo-python
+#: code:addons/custom_features/models/account_move2.py:0
+msgid "Outstanding debits"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__purchase_order
+#: model:ir.model.fields,field_description:custom_features.field_account_move__purchase_order
+#: model:ir.model.fields,field_description:custom_features.field_sale_order__purchase_order
+msgid "P.O NO."
+msgstr "رقم الطلب"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.report_invoice_document_custom
+#: model_terms:ir.ui.view,arch_db:custom_features.report_saleorder_document_custom
+msgid "PROD001"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Paid Invoices"
+msgstr "الفواتير المدفوعة"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.report_invoice_document_custom
+#: model_terms:ir.ui.view,arch_db:custom_features.report_saleorder_document_custom
+#: model_terms:ir.ui.view,arch_db:custom_features.view_product_template_form_custom
+msgid "Part Number"
+msgstr "رقم القطعة"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_account_payment
+msgid "Payments"
+msgstr "الدفعات"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__phone_number_sale_order
+#: model:ir.model.fields,field_description:custom_features.field_account_move__phone_number_sale_order
+#: model:ir.model.fields,field_description:custom_features.field_sale_order__phone_number_sale_order
+#: model_terms:ir.ui.view,arch_db:custom_features.view_order_search_inherit_custom_features
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__plate_number
+#: model:ir.model.fields,field_description:custom_features.field_account_move__plate_number
+#: model:ir.model.fields,field_description:custom_features.field_sale_order__plate_number
+msgid "Plate Number"
+msgstr "رقم اللوحة"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_move_line__price_after_tax
+#: model:ir.model.fields,field_description:custom_features.field_sale_order_line__price_after_tax
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_line_pivot_custom_features
+msgid "Price After Tax"
+msgstr "السعر بعد الضريبة"
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_purchase_order_line__product_price
+msgid "Price at which the product is sold to customers."
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_order_form_inherit_custom_features2
+msgid "Print"
+msgstr "طباعة"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_order_form_inherit_custom_features
+msgid "Print Invoice"
+msgstr "طباعة الفاتورة"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_product_template
+#: model:ir.model.fields,field_description:custom_features.field_stock_details_wizard__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_move__product_category
+msgid "Product Category"
+msgstr "فئة المنتج"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_details_wizard__product_cost
+msgid "Product Cost"
+msgstr "تكلفة المنتج"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_product_template_search_custom
+msgid "Product Description"
+msgstr "وصف المنتج"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_purchase_order_line__product_price
+msgid "Product Price"
+msgstr "سعر البيع"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_product_product
+msgid "Product Variant"
+msgstr "متغير المنتج "
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_purchase_order_line__profit
+msgid "Profit"
+msgstr "الربح"
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_purchase_order_line__profit
+msgid "Profit margin for this product"
+msgstr "الربح للمنتج"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_purchase_order
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "بند أمر الشراء"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Purchasing Person"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_return_picking_exchange_line__quantity
+#: model:ir.model.fields,field_description:custom_features.field_warehouse_stock_line__quantity
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_line_pivot_custom_features
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_move__product_qty_available
+msgid "Quantity Available"
+msgstr "الكمية المتاحة"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Regular Invoices"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_tree_with_reverse_button
+msgid "Rest to Draft"
+msgstr "إعادة إلى المسودة"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__return_amount
+#: model:ir.model.fields,field_description:custom_features.field_account_move__return_amount
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Return Amount"
+msgstr "مجموع المرجعات"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__return_cash_amount
+#: model:ir.model.fields,field_description:custom_features.field_account_move__return_cash_amount
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Return Cash Amount"
+msgstr "مجموع المرجعات النقية"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__return_count
+#: model:ir.model.fields,field_description:custom_features.field_account_move__return_count
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Return Count"
+msgstr "عدد المرجعات"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__return_credit_amount
+#: model:ir.model.fields,field_description:custom_features.field_account_move__return_credit_amount
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Return Credit Amount"
+msgstr "مجموع المرجعات الاجل"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_stock_return_picking
+msgid "Return Picking"
+msgstr "إرجاع الشحنة المنتقاة "
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_stock_return_picking_exchange_line
+msgid "Return Picking Exchange Line"
+msgstr ""
+
+#. module: custom_features
+#. odoo-python
+#: code:addons/custom_features/wizerd/stock_picking_return.py:0
+msgid "Returned Picking"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Returns"
+msgstr "مرجعات"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "بند أمر المبيعات"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Salesperson"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.res_config_settings_view_form_inherit_sale
+msgid "Set a default customer for new sales orders"
+msgstr "تعيين العميل الافتراضي للمبيعات"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__show_in_outstanding
+#: model:ir.model.fields,field_description:custom_features.field_account_move__show_in_outstanding
+msgid "Show in Outstanding Credits/Debits"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_sale_order__specialist
+msgid "Specialist"
+msgstr "المختص"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_product_template__stock_display
+#: model:ir.model.fields,field_description:custom_features.field_sale_order_line__stock_display
+msgid "Stock Available"
+msgstr "المخزون المتاح"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_stock_details_wizard_form
+msgid "Stock Details"
+msgstr "تفاصيل المخزون"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_stock_details_wizard
+msgid "Stock Details per Location"
+msgstr "تفاصيل المخزون حسب الموقع"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_product_product__stock_display
+msgid "Stock Display"
+msgstr "عرض المخزون"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_stock_move
+msgid "Stock Move"
+msgstr "حركة المخزون"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_line_pivot_custom_features
+msgid "Subtotal"
+msgstr ""
+
+#. module: custom_features
+#. odoo-python
+#: code:addons/custom_features/models/account_move2.py:0
+msgid "Success"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.res_config_settings_view_form_inherit_sale
+msgid ""
+"This customer will be automatically selected when creating new sales orders"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.actions.act_window,help:custom_features.action_invoice_analysis_pivot
+msgid ""
+"This pivot view provides invoice analysis grouped by day with workflow types (cash/credit),\n"
+"                    showing invoice counts, total sales, commissions, net sales, and returns."
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_line_pivot_custom_features
+msgid "Total"
+msgstr "اجمالي"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Total Cash Commission"
+msgstr "اجمالي العمولات النقية"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Total Commission"
+msgstr "اجمالي العمولات"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Total Credit Commission"
+msgstr "اجمالي العمولات الاجلة"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__total_sales
+#: model:ir.model.fields,field_description:custom_features.field_account_move__total_sales
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_pivot_custom_features3
+msgid "Total Sales"
+msgstr "مجموع المبيعات"
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__cash_amount
+#: model:ir.model.fields,help:custom_features.field_account_move__cash_amount
+msgid "Total amount for cash invoices"
+msgstr "المجموع للفواتير النقية"
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__credit_amount
+#: model:ir.model.fields,help:custom_features.field_account_move__credit_amount
+msgid "Total amount for credit invoices"
+msgstr "المجموع للفواتير الاجلة"
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__net_sales2
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__net_sales_before_return
+#: model:ir.model.fields,help:custom_features.field_account_move__net_sales2
+#: model:ir.model.fields,help:custom_features.field_account_move__net_sales_before_return
+msgid "Total amount minus commission value"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__total_sales
+#: model:ir.model.fields,help:custom_features.field_account_move__total_sales
+msgid "Total sales amount"
+msgstr "مجموع المبيعات"
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__is_cash_invoice
+#: model:ir.model.fields,help:custom_features.field_account_move__is_cash_invoice
+msgid "True if this invoice is a cash invoice"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__is_credit_invoice
+#: model:ir.model.fields,help:custom_features.field_account_move__is_credit_invoice
+msgid "True if this invoice is a credit invoice"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__is_return
+#: model:ir.model.fields,help:custom_features.field_account_move__is_return
+msgid "True if this is a credit note (return)"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_move_reversal__type
+msgid "Type"
+msgstr "النوع"
+
+#. module: custom_features
+#. odoo-python
+#: code:addons/custom_features/models/purchase_order.py:0
+msgid ""
+"Unable to cancel purchase order(s): %s. You must first cancel their related "
+"vendor bills."
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_line_pivot_custom_features
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_return_picking_exchange_line__uom_id
+msgid "Unit of Measure"
+msgstr "وحدة القياس"
+
+#. module: custom_features
+#: model:ir.model,name:custom_features.model_res_users
+msgid "User"
+msgstr "المستخدم"
+
+#. module: custom_features
+#: model:res.groups,comment:custom_features.group_view_stock_details
+msgid ""
+"Users with this group can view detailed stock information in sale orders."
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_stock_details_wizard__product_cost
+#: model:ir.model.fields,help:custom_features.field_stock_move__cost_price
+msgid ""
+"Value of the product (automatically computed in AVCO).\n"
+"        Used to value the product when the purchase cost is not known (e.g. inventory adjustment).\n"
+"        Used to compute margins on sale orders."
+msgstr ""
+
+#. module: custom_features
+#: model:res.groups,name:custom_features.group_view_stock_details
+msgid "View Stock Details"
+msgstr "عرض تفاصيل المخزون"
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_warehouse_stock_line__warehouse_name
+msgid "Warehouse"
+msgstr "المخازن"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_users_form_inherit_warehouse_access
+msgid "Warehouse Access"
+msgstr "صلاحيات المخازن"
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Week"
+msgstr ""
+
+#. module: custom_features
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "With Return Amount"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_stock_return_picking_exchange_line__wizard_id
+#: model:ir.model.fields,field_description:custom_features.field_warehouse_stock_line__wizard_id
+msgid "Wizard"
+msgstr ""
+
+#. module: custom_features
+#: model:ir.model.fields,field_description:custom_features.field_account_bank_statement_line__workflow_type
+#: model:ir.model.fields,field_description:custom_features.field_account_move__workflow_type
+#: model_terms:ir.ui.view,arch_db:custom_features.view_invoice_workflow_search
+msgid "Workflow Type"
+msgstr "نوع سير العمل"
+
+#. module: custom_features
+#: model:ir.model.fields,help:custom_features.field_account_bank_statement_line__workflow_type
+#: model:ir.model.fields,help:custom_features.field_account_move__workflow_type
+msgid "Workflow type based on payment terms (cash or credit)"
+msgstr ""
+
+#. module: custom_features
+#. odoo-python
+#: code:addons/custom_features/models/account_move2.py:0
+msgid "You can only reverse posted entries."
+msgstr ""

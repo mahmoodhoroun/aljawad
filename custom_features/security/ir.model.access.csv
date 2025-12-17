@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_details_wizard_user,stock.details.wizard.user,model_stock_details_wizard,base.group_user,1,1,1,1
+access_warehouse_stock_line_user,warehouse.stock.line.user,model_warehouse_stock_line,base.group_user,1,1,1,1
+access_stock_return_picking_exchange_line,stock.return.picking.exchange.line,model_stock_return_picking_exchange_line,stock.group_stock_user,1,1,1,1
+access_account_move_zero_quantities_wizard_user,account.move.zero.quantities.wizard.user,model_account_move_zero_quantities_wizard,base.group_user,1,1,1,1
+access_stock_picking_zero_quantities_wizard_user,stock.picking.zero.quantities.wizard.user,model_stock_picking_zero_quantities_wizard,base.group_user,1,1,1,1

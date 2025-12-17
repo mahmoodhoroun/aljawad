@@ -1,0 +1,316 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* auto_reconcile_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e-20231113\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-29 14:37+0000\n"
+"PO-Revision-Date: 2023-12-29 18:17+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n"
+"%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong> نقد / بنك</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>Amount of</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>Banck Name</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>Cash / Banck</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>Date</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>We Reciveed From</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>and that for</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>إستلمنا من</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>اسم البنك</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>التاريخ</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>المحاسب</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>المستلم</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>مبلغ و قدرة</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_report
+msgid "<strong>وذلك مقابل</strong>"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__residual
+msgid "Amount Due"
+msgstr "المبلغ المستحق"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__create_uid
+msgid "Created by"
+msgstr "انشئ بواسطة"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__create_date
+msgid "Created on"
+msgstr "انشئ في"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment__paerner_currency_id
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_form_inherited
+msgid "Customer Credit"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment__payment_invoice_ids
+msgid "Customer Invoices"
+msgstr "فواتير العملاء"
+
+#. module: auto_reconcile_payment
+#. odoo-python
+#: code:addons/auto_reconcile_payment/models/multiinvoice_payment.py:0
+#, python-format
+msgid "Customer Voucher (Receipt)"
+msgstr "مدفوعات العملاء (قبض)"
+
+#. module: auto_reconcile_payment
+#. odoo-python
+#: code:addons/auto_reconcile_payment/models/multiinvoice_payment.py:0
+#, python-format
+msgid "Customer Voucher (Refund)"
+msgstr "مدفوعات العملاء (استرداد)"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__display_name
+msgid "Display Name"
+msgstr "عرض الاسم"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields.selection,name:auto_reconcile_payment.selection__account_payment__reconcile_payment__down_payment
+msgid "Down Payment"
+msgstr "دفعة مقدمة (بدون تسوية مع الفواتير)"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__date_due
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__id
+msgid "ID"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_move_line__invoice_id
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__invoice_id
+msgid "Invoice"
+msgstr "فاتورة"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields.selection,name:auto_reconcile_payment.selection__account_payment__reconcile_payment__invoice_payment
+msgid "Invoice Reconcile Payment"
+msgstr "دفعة لتسوية فواتير"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__date_invoice
+msgid "Invoice/Bill Date"
+msgstr "تاريخ الفاتورة"
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_form_inherited
+msgid "Invoices"
+msgstr "الفواتير"
+
+#. module: auto_reconcile_payment
+#: model:ir.model,name:auto_reconcile_payment.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__write_uid
+msgid "Last Updated by"
+msgstr "اخر تحديث بواسطة"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__write_date
+msgid "Last Updated on"
+msgstr "اخر تحديث في"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__origin
+msgid "Origin"
+msgstr "المستند المصدر"
+
+#. module: auto_reconcile_payment
+#: model:ir.actions.report,name:auto_reconcile_payment.account_payment_action
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__payment_id
+msgid "Payment"
+msgstr "الدفعات"
+
+#. module: auto_reconcile_payment
+#: model:ir.ui.menu,name:auto_reconcile_payment.menu_action_account_payments_payable
+#: model:ir.ui.menu,name:auto_reconcile_payment.menu_action_account_payments_receivable
+msgid "Payment (Refund)"
+msgstr "الدفعات (استرداد)"
+
+#. module: auto_reconcile_payment
+#: model:ir.actions.act_window,name:auto_reconcile_payment.action_account_payments
+#: model:ir.actions.act_window,name:auto_reconcile_payment.action_account_payments_payable
+#: model:ir.model,name:auto_reconcile_payment.model_account_payment
+msgid "Payments"
+msgstr "الدفعات"
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.actions.act_window,help:auto_reconcile_payment.action_account_payments
+#: model_terms:ir.actions.act_window,help:auto_reconcile_payment.action_account_payments_payable
+msgid ""
+"Payments are used to register liquidity movements. You can process those "
+"payments by your own means or by using installed facilities."
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__reconcile_amount
+msgid "Reconcile Amount"
+msgstr "مبلغ التسوية"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment__reconcile_payment
+msgid "Reconcile Payment"
+msgstr "نوع التسوية"
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.actions.act_window,help:auto_reconcile_payment.action_account_payments
+#: model_terms:ir.actions.act_window,help:auto_reconcile_payment.action_account_payments_payable
+msgid "Register a payment"
+msgstr "تسجيل دفعة"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__payment_state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,help:auto_reconcile_payment.field_account_payment_invoice__origin
+msgid "The document(s) that generated the invoice."
+msgstr "المستند الذي انشاء الفاتورة"
+
+#. module: auto_reconcile_payment
+#. odoo-python
+#: code:addons/auto_reconcile_payment/models/multiinvoice_payment.py:0
+#, python-format
+msgid ""
+"The sum of the reconcile amount of listed invoices are greater than "
+"payment's amount."
+msgstr "اجمالي حاصل جمع مبلع التسوية للفواتير المحددة اكبر من مبلغ الدفعة"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment_invoice__amount_total
+msgid "Total"
+msgstr "الاجمالي"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment__paerner_debit
+msgid "Total Payable"
+msgstr "اجمالي الدائن"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,field_description:auto_reconcile_payment.field_account_payment__partner_credit
+msgid "Total Receivable"
+msgstr "اجمالي الرصيد المدين"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,help:auto_reconcile_payment.field_account_payment__partner_credit
+msgid "Total amount this customer owes you."
+msgstr "اجمالي المبلغ الذي يدين به العميل"
+
+#. module: auto_reconcile_payment
+#: model:ir.model.fields,help:auto_reconcile_payment.field_account_payment__paerner_debit
+msgid "Total amount you have to pay to this vendor."
+msgstr "اجمالي المبلغ الذي يجب دفعة لهذا المورد"
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_form_inherited
+msgid "Vendor"
+msgstr "المورد"
+
+#. module: auto_reconcile_payment
+#. odoo-python
+#: code:addons/auto_reconcile_payment/models/multiinvoice_payment.py:0
+#, python-format
+msgid "Vendor Voucher (Payment)"
+msgstr "مدفوعات الموردين (سداد)"
+
+#. module: auto_reconcile_payment
+#. odoo-python
+#: code:addons/auto_reconcile_payment/models/multiinvoice_payment.py:0
+#, python-format
+msgid "Vendor Voucher (Refund)"
+msgstr "مدفوعات الموردين (استرداد)"
+
+#. module: auto_reconcile_payment
+#: model:ir.model,name:auto_reconcile_payment.model_account_payment_invoice
+msgid "account.payment.invoice"
+msgstr ""
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_form_inherited
+msgid "reconcile_amount"
+msgstr "تسوية الدفعات"
+
+#. module: auto_reconcile_payment
+#: model_terms:ir.ui.view,arch_db:auto_reconcile_payment.account_payment_form_inherited
+msgid "residual"
+msgstr "المتبقي"

@@ -1,0 +1,480 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* odoo_salla_integration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-08 06:22+0000\n"
+"PO-Revision-Date: 2024-04-08 06:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.import_wizard_form
+msgid ""
+"<span class=\"bg-warning text-dark\" invisible=\"channel != 'salla' or object != 'delivery.carrier'\">\n"
+"\t\t\t\t\t\tIt will import shipping companies from salla store\n"
+"\t\t\t\t\t</span>"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.import_wizard_form
+msgid ""
+"<span class=\"bg-warning text-dark\" invisible=\"channel != 'salla' or salla_filter_type != 'all'\">\n"
+"\t\t\t\t\t\t\tNote: It will import all the objects from salla store.\n"
+"\t\t\t\t\t\t</span>\n"
+"\t\t\t\t\t\t<span class=\"bg-warning text-dark\" invisible=\"channel != 'salla' or salla_filter_type != 'id'\">\n"
+"\t\t\t\t\t\t\t<span invisible=\"object in ('product.template, sale.order')\">\n"
+"\t\t\t\t\t\t\t\tNote: It will import object of particular 'ID' entered.\n"
+"\t\t\t\t\t\t\t</span>\n"
+"\t\t\t\t\t\t\t<span invisible=\"object not in ('product.template, sale.order')\">\n"
+"\t\t\t\t\t\t\t\tNote: It will import object of particular 'ID' or multiple comma separated ID's.\n"
+"\t\t\t\t\t\t\t</span>\n"
+"\t\t\t\t\t\t</span>"
+msgstr ""
+"<span class=\"bg-warning text-dark\" invisible=\"channel != 'salla' or salla_filter_type != 'all'\">\n"
+"\t\t\t\t\t\t\tNote: سيتم استيراد جميع العناصر من متجر salla.\n"
+"\t\t\t\t\t\t</span>\n"
+"\t\t\t\t\t\t<span class=\"bg-warning text-dark\" invisible=\"channel != 'salla' or salla_filter_type != 'id'\">\n"
+"\t\t\t\t\t\t\t<span invisible=\"object in ('product.template, sale.order')\">\n"
+"\t\t\t\t\t\t\t\tNote: سيتم استيراد كائن تم إدخال 'معرف' محدد إليه.\n"
+"\t\t\t\t\t\t\t</span>\n"
+"\t\t\t\t\t\t\t<span invisible=\"object not in ('product.template, sale.order')\">\n"
+"\t\t\t\t\t\t\t\tNote: سيتم استيراد كائن له 'معرف' محدد أو عدة معرفات مفصولة بفواصل.\n"
+"\t\t\t\t\t\t\t</span>\n"
+"\t\t\t\t\t\t</span>"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.import_wizard_form
+msgid ""
+"<span invisible=\"salla_filter_type != 'date' or object == 'sale.order'\">\n"
+"\t\t\t\t\t\t\tNote: It will import all objects, Date format is not supported for this object\n"
+"\t\t\t\t\t\t</span>"
+msgstr ""
+"<span invisible=\"salla_filter_type != 'date' or object == 'sale.order'\">\n"
+"\t\t\t\t\t\t\tNote: سيتم استيراد كافة الكائنات، تنسيق التاريخ غير مدعوم لهذا الكائن\n"
+"\t\t\t\t\t\t</span>"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_multi_channel_sale__access_token
+msgid "Access Toekn"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid "Access Token"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes__salla_filter_type__all
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes_value__salla_filter_type__all
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_categories__salla_filter_type__all
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_operation__salla_filter_type__all
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_orders__salla_filter_type__all
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_partners__salla_filter_type__all
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_products__salla_filter_type__all
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_templates__salla_filter_type__all
+msgid "All"
+msgstr "الجميع"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes__salla_filter_type__date
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes_value__salla_filter_type__date
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_categories__salla_filter_type__date
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_operation__salla_filter_type__date
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_orders__salla_filter_type__date
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_partners__salla_filter_type__date
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_products__salla_filter_type__date
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_templates__salla_filter_type__date
+msgid "By Date"
+msgstr "حسب التاريخ"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes__salla_filter_type__id
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes_value__salla_filter_type__id
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_categories__salla_filter_type__id
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_operation__salla_filter_type__id
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_orders__salla_filter_type__id
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_partners__salla_filter_type__id
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_products__salla_filter_type__id
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_templates__salla_filter_type__id
+msgid "By ID"
+msgstr "بواسطة معرف"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_multi_channel_sale__salla_redirect_url
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid "Callback-Url"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes__salla_order_status__525144736
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes_value__salla_order_status__525144736
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_categories__salla_order_status__525144736
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_operation__salla_order_status__525144736
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_orders__salla_order_status__525144736
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_partners__salla_order_status__525144736
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_products__salla_order_status__525144736
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_templates__salla_order_status__525144736
+msgid "Canceled"
+msgstr "ألغيت"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid "Channel Configuration"
+msgstr "تكوين القناة"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid "Client ID"
+msgstr "معرف عميل"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid "Client Secret/Private Key"
+msgstr "سر العميل/المفتاح الخاص"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_multi_channel_sale__salla_client_id
+msgid "Client id"
+msgstr "معرف عميل""
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid "Client secret key"
+msgstr "المفتاح السري للعميل"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes__salla_order_status__1298199463
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes_value__salla_order_status__1298199463
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_categories__salla_order_status__1298199463
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_operation__salla_order_status__1298199463
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_orders__salla_order_status__1298199463
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_partners__salla_order_status__1298199463
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_products__salla_order_status__1298199463
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_templates__salla_order_status__1298199463
+msgid "Completed"
+msgstr "مكتمل"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid "Configuration for Odoo Multichannel Sale Salla Connector"
+msgstr "قم بتكوين موصل Salla للمبيعات متعددة القنوات في Odoo"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid "Connect Salla"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid "Create or manage the app at salla end"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid "Credentials"
+msgstr "أوراق اعتماد"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes__salla_order_status__1723506348
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes_value__salla_order_status__1723506348
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_categories__salla_order_status__1723506348
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_operation__salla_order_status__1723506348
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_orders__salla_order_status__1723506348
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_partners__salla_order_status__1723506348
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_products__salla_order_status__1723506348
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_templates__salla_order_status__1723506348
+msgid "Delivered"
+msgstr "تم التوصيل"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes__salla_order_status__349994915
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes_value__salla_order_status__349994915
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_categories__salla_order_status__349994915
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_operation__salla_order_status__349994915
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_orders__salla_order_status__349994915
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_partners__salla_order_status__349994915
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_products__salla_order_status__349994915
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_templates__salla_order_status__349994915
+msgid "Delivery in Progress"
+msgstr "التسليم قيد التقدم"
+
+#. module: odoo_salla_integration
+#: model:ir.model,name:odoo_salla_integration.model_export_categories
+msgid "Export Category"
+msgstr "فئة التصدير"
+
+#. module: odoo_salla_integration
+#: model:ir.model,name:odoo_salla_integration.model_export_templates
+msgid "Export Template"
+msgstr "تصدير القالب"
+
+#. module: odoo_salla_integration
+#: model:ir.model,name:odoo_salla_integration.model_wk_feed
+msgid "Feed"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes__salla_filter_type
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes_value__salla_filter_type
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_categories__salla_filter_type
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_operation__salla_filter_type
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_orders__salla_filter_type
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_partners__salla_filter_type
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_products__salla_filter_type
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_templates__salla_filter_type
+msgid "Filter Type"
+msgstr "نوع فلتر"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.import_wizard_form
+msgid "From Date"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model:ir.model,name:odoo_salla_integration.model_import_operation
+msgid "Import Operation"
+msgstr "عملية الاستيراد"
+
+#. module: odoo_salla_integration
+#: model:ir.actions.act_window,name:odoo_salla_integration.open_import_wizard_action
+msgid "Import Wizard"
+msgstr "معالج الاستيراد"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.import_wizard_form
+msgid ""
+"Import all orders with selected status, it will import all if nothing is "
+"selected"
+msgstr ""
+"قم باستيراد جميع الطلبات ذات الحالة المحددة، وسيتم استيرادها جميعًا إذا لم يكن هناك أي منها"
+"عازم"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.import_wizard_form
+msgid "It will import all matching product with keyword in their Name or SKU"
+msgstr "سيتم استيراد جميع المنتجات المطابقة للكلمة الرئيسية في الاسم أو SKU الخاص بها"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.import_wizard_form
+msgid "Keyword"
+msgstr "الكلمة الرئيسية"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.import_wizard_form
+msgid "Keyword can be name or sku of the product, or a part of it"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.import_wizard_form
+msgid "Keyword/SKU"
+msgstr "الكلمة الرئيسية/SKU"
+
+#. module: odoo_salla_integration
+#: model:ir.model,name:odoo_salla_integration.model_multi_channel_sale
+msgid "Multi Channel Sale"
+msgstr ""
+
+#. module: odoo_salla_integration
+#. odoo-javascript
+#: code:addons/odoo_salla_integration/static/src/xml/instance_dashboard.xml:0
+#, python-format
+msgid "Not Found!"
+msgstr "غير معثور عليه"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes__salla_object_id
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes_value__salla_object_id
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_categories__salla_object_id
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_operation__salla_object_id
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_orders__salla_object_id
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_partners__salla_object_id
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_products__salla_object_id
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_templates__salla_object_id
+msgid "Object ID"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.import_wizard_form
+msgid "Order Status"
+msgstr "حالة الطلب"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes__salla_order_status__1473353380
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes_value__salla_order_status__1473353380
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_categories__salla_order_status__1473353380
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_operation__salla_order_status__1473353380
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_orders__salla_order_status__1473353380
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_partners__salla_order_status__1473353380
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_products__salla_order_status__1473353380
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_templates__salla_order_status__1473353380
+msgid "Pending Payment"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid ""
+"Please add '/salla/authenticate' after your odoo url then paste this url to your salla application callback url\n"
+"\t\t\t\t\t\t\t\t\t\teg: 'https://odoo-base-url.com/salla/authenticate'"
+msgstr ""
+"يرجى إضافة '/salla/authenticate' بعد عنوان url الخاص بـ odoo ثم لصق عنوان url هذا في عنوان url الخاص برد الاتصال بتطبيق salla\n"
+"\t\t\t\t\t\t\t\t\t\teg: 'https://odoo-base-url.com/salla/authenticate'"
+
+#. module: odoo_salla_integration
+#: model:ir.model,name:odoo_salla_integration.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: odoo_salla_integration
+#: model:ir.model,name:odoo_salla_integration.model_product_feed
+msgid "Product Feed"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_multi_channel_sale__refresh_token
+msgid "Refresh Toekn"
+msgstr "تحديث الرمز المميز"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes__salla_enable_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes_value__salla_enable_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_categories__salla_enable_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_operation__salla_enable_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_orders__salla_enable_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_partners__salla_enable_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_products__salla_enable_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_templates__salla_enable_keyword
+msgid "Salla Enable Keyword"
+msgstr "Salla تمكين الكلمة الرئيسية"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes__salla_from_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes_value__salla_from_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_categories__salla_from_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_operation__salla_from_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_orders__salla_from_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_partners__salla_from_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_products__salla_from_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_templates__salla_from_date
+msgid "Salla From Date"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes__salla_order_status
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes_value__salla_order_status
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_categories__salla_order_status
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_operation__salla_order_status
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_orders__salla_order_status
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_partners__salla_order_status
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_products__salla_order_status
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_templates__salla_order_status
+msgid "Salla Order Status"
+msgstr "حالة طلب سالا"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_product_feed__salla_product_attribute_options
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_product_product__salla_product_attribute_options
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_product_template__salla_product_attribute_options
+msgid "Salla Product Attribute Options"
+msgstr "خيارات سمة منتج Salla"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes__salla_product_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes_value__salla_product_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_categories__salla_product_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_operation__salla_product_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_orders__salla_product_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_partners__salla_product_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_products__salla_product_keyword
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_templates__salla_product_keyword
+msgid "Salla Product Keyword"
+msgstr "الكلمة المفتاحية لمنتج Salla"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes__salla_to_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_attributes_value__salla_to_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_categories__salla_to_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_operation__salla_to_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_orders__salla_to_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_partners__salla_to_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_products__salla_to_date
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_import_templates__salla_to_date
+msgid "Salla To Date"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_multi_channel_sale__salla_token_expiry
+msgid "Salla Token Expiry"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_multi_channel_sale__salla_client_secret
+msgid "Secret key"
+msgstr "المفتاح السري"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes__salla_order_status__814202285
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes_value__salla_order_status__814202285
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_categories__salla_order_status__814202285
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_operation__salla_order_status__814202285
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_orders__salla_order_status__814202285
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_partners__salla_order_status__814202285
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_products__salla_order_status__814202285
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_templates__salla_order_status__814202285
+msgid "Shipped"
+msgstr "شحنها"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.export_odoo_categories_form
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.export_odoo_templates_form
+msgid "Synchronize"
+msgstr "المزامنة"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid "Test Connection"
+msgstr "اختبار الاتصال"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.import_wizard_form
+msgid "To Date"
+msgstr ""
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes__salla_order_status__566146469
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_attributes_value__salla_order_status__566146469
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_categories__salla_order_status__566146469
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_operation__salla_order_status__566146469
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_orders__salla_order_status__566146469
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_partners__salla_order_status__566146469
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_products__salla_order_status__566146469
+#: model:ir.model.fields.selection,name:odoo_salla_integration.selection__import_templates__salla_order_status__566146469
+msgid "Under Review"
+msgstr "قيد المراجعة"
+
+#. module: odoo_salla_integration
+#: model:ir.model.fields,field_description:odoo_salla_integration.field_multi_channel_sale__salla_verification_key
+msgid "Verification Key"
+msgstr "مفتاح التحقق"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_form
+msgid "click here"
+msgstr "انقر هنا"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.import_wizard_form
+msgid "keyword"
+msgstr "الكلمة الرئيسية"
+
+#. module: odoo_salla_integration
+#: model_terms:ir.ui.view,arch_db:odoo_salla_integration.salla_instance_view_kanban
+msgid "salla_logo"
+msgstr ""

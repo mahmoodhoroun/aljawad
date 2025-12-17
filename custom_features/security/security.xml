@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_view_stock_details" model="res.groups">
+        <field name="name">View Stock Details</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+        <field name="comment">Users with this group can view detailed stock information in sale orders.</field>
+    </record>
+
+    <!-- Group to allow lowering product_price below product's Sale Price -->
+    <record id="group_allow_lower_product_price" model="res.groups">
+        <field name="name">Allow Lower Product Price</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+        <field name="comment">Users with this group can set Purchase Order Line Product Price lower than the product's Sale Price.</field>
+    </record>
+
+    <!-- Group to restrict product creation and hide cost field -->
+    <record id="group_restrict_product_creation" model="res.groups">
+        <field name="name">Restrict Product Creation</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+        <field name="comment">Users with this group cannot create products and cannot see the cost field.</field>
+    </record>
+
+
+    <data noupdate="0">
+
+        <record id="stock.stock_warehouse_comp_rule" model="ir.rule">
+            <field name="domain_force">['|', ('company_id', 'in', company_ids), ('id', 'in', user.allowed_warehouse_ids.ids)]</field>
+        </record>
+
+        <record id="stock.stock_warehouse_orderpoint_rule" model="ir.rule">
+            <field name="domain_force">['|', ('company_id', 'in', company_ids), ('id', 'in', user.allowed_warehouse_ids.ids)]</field>
+        </record>
+
+
+    </data>
+</odoo>

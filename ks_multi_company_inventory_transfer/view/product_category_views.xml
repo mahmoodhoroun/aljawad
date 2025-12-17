@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit Product Category Form View -->
+    <record id="view_product_category_form_inherit" model="ir.ui.view">
+        <field name="name">product.category.form.inherit.custom_features</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="stock_account.view_category_property_form"/>
+        <field name="arch" type="xml">
+            <!-- Add the new field after Stock Output Account -->
+            <xpath expr="//field[@name='property_stock_account_output_categ_id']" position="after">
+                <field name="property_stock_transfer_account_categ_id"  invisible="property_valuation == 'manual_periodic'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

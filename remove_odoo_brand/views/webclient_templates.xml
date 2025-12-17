@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="layout" inherit_id="web.layout">
+        <xpath expr="//link[@rel='shortcut icon']" position="replace">
+            <link type="image/x-icon" rel="shortcut icon" t-att-href="x_icon or '/remove_odoo_brand/static/img/qparts.ico'"/>
+        </xpath>
+    </template>
+
+    <template id="login_layout_inherit" inherit_id="web.login_layout">
+        <xpath expr="//div[hasclass('text-center')][hasclass('small')]/a[@href='https://www.odoo.com?utm_source=db&amp;utm_medium=auth']" position="replace">
+        </xpath>
+    </template>
+</odoo>

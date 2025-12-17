@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_purchase_workflow" model="ir.module.category">
+        <field name="name">Purchase Workflow</field>
+        <field name="description">Manage Purchase workflow configuration</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="group_auto_purchase_workflow" model="res.groups">
+        <field name="name">Auto Purchase workflow</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_show_purchase_workflow_menu" model="res.groups">
+        <field name="name">Show Purchase Workflow Menu</field>
+        <field name="category_id" ref="module_category_purchase_workflow"/>
+        <field name="implied_ids" eval="[(4, ref('group_auto_purchase_workflow'))]"/>
+    </record>
+
+    <!-- Multi - Company Rules -->
+    <record id="auto_purchase_workflow_comp_rule" model="ir.rule">
+        <field name="name">Auto Purchase Workflow multi-company</field>
+        <field name="model_id" ref="model_sh_auto_purchase_workflow"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

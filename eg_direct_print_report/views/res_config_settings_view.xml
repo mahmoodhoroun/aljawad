@@ -1,0 +1,21 @@
+<odoo>
+    <record id="res_config_settings_direct_print" model="ir.ui.view">
+        <field name="name">res.config.settings.direct.print</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Direct Print" string="Direct Print" name="eg_direct_print_report">
+                    <block title="Direct Print Configuration" name="operations_setting_container">
+                        <setting id="all_print_preview" string="Direct Print"
+                                 help="All Reports Of Direct Print Automated">
+                            <field name="all_print_preview"/>
+                        </setting>
+
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

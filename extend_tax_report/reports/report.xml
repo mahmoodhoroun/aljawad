@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_account_tax_excel" model="ir.actions.report">
+            <field name="name">Tax report</field>
+            <field name="model">kit.account.tax.report</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">extend_tax_report.report_tax_excel</field>
+            <field name="report_file">extend_tax_report.report_tax_excel</field>
+            <field name="attachment_use">False</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<odoo>
+	<data>
+		<record id="import_wizard_form" model="ir.ui.view">
+			<field name="name">import.operation.form</field>
+			<field name="model">import.operation</field>
+			<field name="inherit_id" ref="odoo_multi_channel_sale.import_wizard_form"/>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='filters']" postion="inside">
+					<group invisible="channel != 'salla'">
+						<field
+							name  ="salla_filter_type"
+							widget="radio"
+						/>
+					</group>
+					<group
+						invisible="channel != 'salla' or salla_filter_type != 'id'">
+						<field name="salla_object_id" required="channel == 'salla' and salla_filter_type == 'id'"/>
+					</group>
+					<group
+						invisible="channel != 'salla' or salla_filter_type != 'date' or object != 'sale.order'">
+						<group col="1">
+							<label string="From Date" for="salla_from_date"/>
+							<field name="salla_from_date" nolabel="1" required="channel == 'salla' and salla_filter_type == 'date' and object == 'sale.order'"/>
+						</group>
+						<group col="1">
+							<label string="To Date" for="salla_to_date"/>
+							<field name="salla_to_date" nolabel="1" required="channel == 'salla' and salla_filter_type == 'date' and object == 'sale.order'"/>
+						</group>
+					</group>
+					<div class="row mt16 o_settings_container" invisible="channel != 'salla' or salla_filter_type != 'all' or object != 'product.template'">
+						<div class="col-xs-12 col-md-12 o_setting_box">
+							<div class="o_setting_left_pane"/>
+							<div class="o_setting_right_pane">
+								<label string="Keyword/SKU" for="salla_enable_keyword"/>
+								<field name="salla_enable_keyword"/>
+								<div>
+									<field
+										name="salla_product_keyword"
+										placeholder="keyword"
+										string="Keyword"
+										style="width:40%;"
+										invisible="salla_enable_keyword == False"
+										help="Keyword can be name or sku of the product, or a part of it"
+									/>
+								</div>
+								<div class="text-muted" invisible="salla_enable_keyword == False">
+									It will import all matching product with keyword in their Name or SKU
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt16 o_settings_container" invisible="channel != 'salla' or object != 'product.template'">
+						<div class="col-xs-12 col-md-12 o_setting_box">
+							<div class="o_setting_left_pane">
+								<field name="salla_import_variants_as_products"/>
+							</div>
+							<div class="o_setting_right_pane">
+								<label string="Import Variants as Separate Products" for="salla_import_variants_as_products"/>
+								<div class="text-muted">
+									When enabled, each product variant will be imported as a separate product instead of as variants of a single product
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt16 o_settings_container" invisible="channel != 'salla' or salla_filter_type != 'all' or object != 'sale.order'">
+						<div class="col-xs-12 col-md-12 o_setting_box">
+							<div class="o_setting_left_pane"/>
+							<div class="o_setting_right_pane">
+								<label string="Order Status" for="salla_order_status"/>
+								<field 
+									name="salla_order_status" 
+									style="width:30%%"
+								/>
+								<div class="text-muted">
+									Import all orders with selected status, it will import all if nothing is selected
+								</div>
+							</div>
+						</div>
+					</div>
+				</xpath>
+
+				<xpath expr="//form" postion="inside">
+					<div invisible="channel != 'salla' or object == 'delivery.carrier'">
+						<span class='bg-warning text-dark' invisible="channel != 'salla' or salla_filter_type != 'all'">
+							Note: It will import all the objects from salla store.
+						</span>
+						<span class='bg-warning text-dark' invisible="channel != 'salla' or salla_filter_type != 'id'">
+							<span invisible="object in ('product.template, sale.order')">
+								Note: It will import object of particular 'ID' entered.
+							</span>
+							<span invisible="object not in ('product.template, sale.order')">
+								Note: It will import object of particular 'ID' or multiple comma separated ID's.
+							</span>
+						</span>
+					</div>
+					<span class='bg-warning text-dark' invisible="channel != 'salla' or object != 'delivery.carrier'">
+						It will import shipping companies from salla store
+					</span>
+					<div class='bg-warning text-dark' invisible="channel != 'salla'">
+						<span invisible="salla_filter_type != 'date' or object == 'sale.order'">
+							Note: It will import all objects, Date format is not supported for this object
+						</span>
+					</div>
+				</xpath>
+			</field>
+		</record>
+
+		<record id="open_import_wizard_action" model="ir.actions.act_window">
+			<field name="name">Import Wizard</field>
+			<field name="res_model">import.operation</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</odoo>

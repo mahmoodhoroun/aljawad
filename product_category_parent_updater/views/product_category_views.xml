@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit product category list view to add button in header -->
+        <record id="product_category_list_view_inherit" model="ir.ui.view">
+            <field name="name">product.category.tree.inherit</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_list_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list" position="inside">
+                    <header>
+                        <button name="action_update_all_from_parent" 
+                                string="Update from Parent" 
+                                type="object" 
+                                class="btn-primary"
+                                help="Update selected categories with values from their parent categories"/>
+                    </header>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Add button to form view as well for individual category update -->
+        <record id="product_category_form_view_inherit" model="ir.ui.view">
+            <field name="name">product.category.form.inherit</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <header>
+                        <button name="action_update_from_parent" 
+                                string="Update from Parent" 
+                                type="object" 
+                                class="btn-secondary"
+                                help="Update this category with values from its parent category"
+                                invisible="not parent_id"/>
+                    </header>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

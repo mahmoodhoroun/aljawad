@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<odoo>
+	<data noupdate="1">
+		<record id="salla_channel" forcecreate='True' model="multi.channel.sale">
+			<field name="name">Salla</field>
+			<field name="channel">salla</field>
+			<field name="environment">sandbox</field>
+			<field name="debug">disable</field>
+			<field name="salla_client_id">xxx-xxx</field>
+			<field name="salla_client_secret">xxx-xxx</field>
+			<field name="color">#00ffbf</field>
+			<field name="image" type="base64" file="odoo_salla_integration/static/description/icon.png"/>
+			<field name="order_state_ids" eval="[
+						(0,0,{'channel_state':'under_review','default_order_state':True,'odoo_order_state':'draft'}),
+						(0,0,{'channel_state':'payment_pending','odoo_order_state':'sale'}),
+						(0,0,{'channel_state':'completed','odoo_create_invoice':True, 'odoo_set_invoice_state':'paid', 'odoo_ship_order':True,'odoo_order_state':'done'}),
+						(0,0,{'channel_state':'shipped','odoo_order_state':'sale'}),
+						(0,0,{'channel_state':'delivering','odoo_order_state':'sale'}),
+						(0,0,{'channel_state':'delivered','odoo_order_state':'done'}),
+						(0,0,{'channel_state':'canceled','odoo_order_state':'cancelled',}),
+					]" />
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="extended_accounting_tax_report_view" model="ir.ui.view">
+        <field name="name">Tax Reports</field>
+        <field name="model">kit.account.tax.report</field>
+        <field name="inherit_id" ref="base_accounting_kit.accounting_tax_report_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="after">
+                <group>
+                    <group>
+                        <field name="target_move" widget="radio"/>
+                    </group>
+                    <group>
+                        <label for="tax_ids"/>
+                        <div>
+                            <field name="tax_ids" widget="many2many_tags"/>
+                        </div>
+                    </group>
+                </group>
+            </xpath>
+            <!-- <xpath expr="//button[@name='check_report']" position="after">
+                <button name="check_report" string="Print Excel"
+                        type="object" class="oe_highlight"
+                        context="{'excel_report':1}"
+                />
+            </xpath> -->
+        </field>
+    </record>
+</odoo>

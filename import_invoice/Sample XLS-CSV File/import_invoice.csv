@@ -1,0 +1,7 @@
+INVOICE ID,PARTNER,CURRENCY,PRODUCT,QUANTITY,UOM,DESCRIPTION,PRICE,DISCOUNT,SALESPERSON,TAX,DATE
+BI/AMD-A409,Azure Interior,USD,Drawer,10,Units,Box-Shaped Drawer,1850,10,Mitchell Admin,,2022-02-11
+BI/AMD-A409,Azure Interior,USD,Four Person Desk,68,Units,Four Person Desk for Office,24058,18,Mitchell Admin,,2022-02-11
+BI/AMD-A409,Azure Interior,USD,Individual Workplace,52,Units,Individual Workplace,8000,6,Mitchell Admin,,2022-02-11
+INVOICE/R07,Deco Addict,USD,Large Desk,114,Units,Large Desk,6450,15,Mitchell Admin,,2022-02-11
+INVOICE/R07,Deco Addict,USD,Office Chair,235,Units,Office Chair,16000,12,Mitchell Admin,,2022-02-11
+INVOICE/R08,Lumber Inc,USD,Storage Box,55,Units,Storage Box,3254,16,Marc Demo,,2022-02-11

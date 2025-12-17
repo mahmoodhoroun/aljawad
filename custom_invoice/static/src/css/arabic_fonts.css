@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Tajawal';
+    src: url('/custom_invoice/static/src/fonts/Tajawal/Tajawal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.arabic {
+    font-family: 'Tajawal', sans-serif !important;
+    direction: rtl;
+}
+
+.invoice-arabic {
+    font-family: 'Tajawal', sans-serif !important;
+}

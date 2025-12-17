@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_payment_reconcile_fix_company,payment_reconcile_fix.res_company,base.model_res_company,account.group_account_manager,1,1,1,1

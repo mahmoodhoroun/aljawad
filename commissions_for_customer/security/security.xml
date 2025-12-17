@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Commission Security Category -->
+        <record id="module_category_commission" model="ir.module.category">
+            <field name="name">Commission Management</field>
+            <field name="description">User access level for commission management</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Commission User Group -->
+        <record id="group_commission_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_category_commission"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Commission Admin Group -->
+        <record id="group_commission_admin" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="module_category_commission"/>
+            <field name="implied_ids" eval="[(4, ref('group_commission_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+        </record>
+
+        <!-- Record Rules -->
+        <record id="commission_user_rule" model="ir.rule">
+            <field name="name">Commission User Rule</field>
+            <field name="model_id" ref="model_sales_commission"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+            <field name="groups" eval="[(4, ref('group_commission_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="commission_admin_rule" model="ir.rule">
+            <field name="name">Commission Admin Rule</field>
+            <field name="model_id" ref="model_sales_commission"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+            <field name="groups" eval="[(4, ref('group_commission_admin'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+    </data>
+</odoo>

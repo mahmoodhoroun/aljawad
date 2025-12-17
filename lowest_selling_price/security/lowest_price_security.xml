@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_allow_lower_price" model="res.groups">
+        <field name="name">Allow Lower Price</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+        <field name="comment">Allow users to confirm sales orders with prices lower than the lowest price.</field>
+    </record>
+
+
+    <record id="group_allow_sell_bellow_cost" model="res.groups">
+        <field name="name">Allow Sell bellow Cost</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+        <field name="comment">Allow users to sell products bellow cost price.</field>
+    </record>
+    <record id="group_show_cost" model="res.groups">
+        <field name="name">Show Cost</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+        <field name="comment">Allow users to show cost.</field>
+    </record>
+</odoo>

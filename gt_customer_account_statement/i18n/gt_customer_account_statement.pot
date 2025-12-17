@@ -1,0 +1,903 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gt_customer_account_statement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-05 07:51+0000\n"
+"PO-Revision-Date: 2025-05-05 07:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+msgid "0-30"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+msgid "30-60"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+msgid "60-90"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+msgid "90+"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid ""
+"<br/>\n"
+"\t\t\t\t\t\t\t<span style=\"color:white\">b</span>\n"
+"\t\t\t\t\t\t<br/>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:mail.template,body_html:gt_customer_account_statement.email_template_customer_overdue_statements
+msgid ""
+"<div>\n"
+"\n"
+"                <!--            <t t-if=\"label.product_id.whs_code\">-->\n"
+"\n"
+"                <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                    <p>Hello,</p>\n"
+"                    <p>A due payment invoice is available for you:</p>\n"
+"\n"
+"                    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                        <t t-if=\"object.user_id\">\n"
+"                            Your contact:\n"
+"                            <a href=\"mailto:%7B%7Bobject.user_id.email%20or%20''%7D%7D?subject=Invoice%20%7B%7Bobject.name%7D%7D\">\n"
+"                                {{object.user_id.name}}\n"
+"                            </a>\n"
+"                        </t>\n"
+"                    </p>\n"
+"<!--                    <t t-if=\"object.paypal_url\">-->\n"
+"<!--                        <br/>-->\n"
+"<!--                        <p>It is also possible to directly pay with Paypal:</p>-->\n"
+"<!--                        <a style=\"margin-left: 120px;\" href=\"{{object.paypal_url}}\">-->\n"
+"<!--                            <img class=\"oe_edi_paypal_button\" src=\"/account/static/src/img/btn_paynowcc_lg.gif\"/>-->\n"
+"<!--                        </a>-->\n"
+"<!--                    </t>-->\n"
+"\n"
+"                    <br/>\n"
+"                    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"<!--                    <p>Thank you for choosing {{object.company_id.name or 'us'}}!</p>-->\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"<!--                    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">-->\n"
+"<!--                        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">-->\n"
+"<!--                            <strong style=\"text-transform:uppercase;\">{{object.company_id.name}}</strong>-->\n"
+"<!--                        </h3>-->\n"
+"<!--                    </div>-->\n"
+"<!--                    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">-->\n"
+"<!--                        <span style=\"color: #222; margin-bottom: 5px; display: block; \">-->\n"
+"<!--                            {{object.company_id.partner_id.sudo().with_context(show_address=True,-->\n"
+"<!--                            html_format=True).name_get()[0][1]}}-->\n"
+"<!--                        </span>-->\n"
+"<!--                        <t t-if=\"object.company_id.phone\">-->\n"
+"\n"
+"<!--                            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">-->\n"
+"<!--                                Phone: {{object.company_id.phone}}-->\n"
+"<!--                            </div>-->\n"
+"<!--                        </t>-->\n"
+"<!--                        <t t-if=\"object.company_id.website\">-->\n"
+"\n"
+"<!--                            <div>-->\n"
+"<!--                                Web :-->\n"
+"<!--                                <a href=\"{{object.company_id.website}}\">{{object.company_id.website}}</a>-->\n"
+"<!--                            </div>-->\n"
+"<!--                        </t>-->\n"
+"<!--                        <p></p>-->\n"
+"<!--                    </div>-->\n"
+"                </div>\n"
+"            </div>\n"
+"        "
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:mail.template,body_html:gt_customer_account_statement.email_template_supplier_statements
+msgid ""
+"<div>\n"
+"                <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                    <p>Hello,</p>\n"
+"                    <p>A Account Statment invoice is available for you:</p>\n"
+"\n"
+"                    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                        <t t-if=\"object.user_id\">\n"
+"\n"
+"                            Your contact:\n"
+"                            <a href=\"mailto:%7B%7Bobject.user_id.email%20or%20''%7D%7D?subject=Invoice%20%24%7Bobject.name%7D\">\n"
+"                                {{object.user_id.name}}\n"
+"                            </a>\n"
+"                        </t>\n"
+"                    </p>\n"
+"<!--                    <t t-if=\"object.paypal_url\">-->\n"
+"\n"
+"<!--                        <br/>-->\n"
+"<!--                        <p>It is also possible to directly pay with Paypal:</p>-->\n"
+"<!--                        <a style=\"margin-left: 120px;\" href=\"{{object.paypal_url}}\">-->\n"
+"<!--                            <img class=\"oe_edi_paypal_button\" src=\"/account/static/src/img/btn_paynowcc_lg.gif\"/>-->\n"
+"<!--                        </a>-->\n"
+"<!--                    </t>-->\n"
+"                    <br/>\n"
+"                    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"                    <p>Thank you for choosing {{object.company_id.name or 'us'}}!</p>\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"                        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"                            <strong style=\"text-transform:uppercase;\">{{object.company_id.name}}</strong>\n"
+"                        </h3>\n"
+"                    </div>\n"
+"                    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"                        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"                            {{object.company_id.partner_id.sudo().with_context(show_address=True,\n"
+"                            html_format=True).name_get()[0][1] }}\n"
+"                        </span>\n"
+"                        <t t-if=\"object.company_id.phone\">\n"
+"\n"
+"                            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                                Phone:{{object.company_id.phone}}\n"
+"                            </div>\n"
+"                        </t>\n"
+"                        <t t-if=\"object.company_id.website\">\n"
+"\n"
+"                            <div>\n"
+"                                Web :\n"
+"                                <a href=\"%7B%7Bobject.company_id.website%7D%7D\">{{object.company_id.website}}</a>\n"
+"                            </div>\n"
+"                        </t>\n"
+"                        <p/>\n"
+"                    </div>\n"
+"                </div>\n"
+"            </div>\n"
+"        "
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:mail.template,body_html:gt_customer_account_statement.email_template_customer_statements
+msgid ""
+"<div>\n"
+"                <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                    <p>Hello,</p>\n"
+"                    <p>A Account Statment invoice is available for you:</p>\n"
+"\n"
+"                    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                        <t t-if=\"object.user_id\">\n"
+"                            Your contact:\n"
+"                            <a href=\"mailto:%7B%7Bobject.user_id.email%20or%20''%7D%7D?subject=Invoice%20%24%7Bobject.name%7D\">\n"
+"                                {{object.user_id.name}}\n"
+"                            </a>\n"
+"                        </t>\n"
+"                    </p>\n"
+"<!--                    <t t-if=\"object.paypal_url\">-->\n"
+"\n"
+"<!--                        <br/>-->\n"
+"<!--                        <p>It is also possible to directly pay with Paypal:</p>-->\n"
+"<!--                        <a style=\"margin-left: 120px;\" href=\"{{object.paypal_url}}\">-->\n"
+"<!--                            <img class=\"oe_edi_paypal_button\" src=\"/account/static/src/img/btn_paynowcc_lg.gif\"/>-->\n"
+"<!--                        </a>-->\n"
+"<!--                    </t>-->\n"
+"                    <br/>\n"
+"                    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"                    <p>Thank you for choosing {{object.company_id.name or 'us'}}!</p>\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"                        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"                            <strong style=\"text-transform:uppercase;\">{{object.company_id.name}}</strong>\n"
+"                        </h3>\n"
+"                    </div>\n"
+"                    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"                        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"                            {{object.company_id.partner_id.sudo().with_context(show_address=True,\n"
+"                            html_format=True).name_get()[0][1] }}\n"
+"                        </span>\n"
+"                        <t t-if=\"object.company_id.phone\">\n"
+"\n"
+"                            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                                Phone:{{object.company_id.phone}}\n"
+"                            </div>\n"
+"                        </t>\n"
+"                        <t t-if=\"object.company_id.website\">\n"
+"\n"
+"                            <div>\n"
+"                                Web :\n"
+"                                <a href=\"%7B%7Bobject.company_id.website%7D%7D\">{{object.company_id.website}}</a>\n"
+"                            </div>\n"
+"                        </t>\n"
+"                        <p/>\n"
+"                    </div>\n"
+"                </div>\n"
+"            </div>\n"
+"        "
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:mail.template,body_html:gt_customer_account_statement.email_template_supplier_overdue_statements
+msgid ""
+"<div>\n"
+"                <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                    <p>Hello,</p>\n"
+"                    <p>A due payment invoice is available for you:</p>\n"
+"\n"
+"                    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                        <t t-if=\"object.user_id\">\n"
+"                            Your contact:\n"
+"                            <a href=\"mailto:%7B%7Bobject.user_id.email%20or%20''%7D%7D?subject=Invoice%20%24%7Bobject.name%7D\">\n"
+"                                {{object.user_id.name}}\n"
+"                            </a>\n"
+"                        </t>\n"
+"                    </p>\n"
+"<!--                    <t t-if=\"object.paypal_url\">-->\n"
+"<!--                        <br/>-->\n"
+"<!--                        <p>It is also possible to directly pay with Paypal:</p>-->\n"
+"<!--                        <a style=\"margin-left: 120px;\" href=\"{{object.paypal_url}}\">-->\n"
+"<!--                            <img class=\"oe_edi_paypal_button\" src=\"/account/static/src/img/btn_paynowcc_lg.gif\"/>-->\n"
+"<!--                        </a>-->\n"
+"<!--                    </t>-->\n"
+"                    <br/>\n"
+"                    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"                    <p>Thank you for choosing {{object.company_id.name or 'us'}}!</p>\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"                        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"                            <strong style=\"text-transform:uppercase;\">{{object.company_id.name}}</strong>\n"
+"                        </h3>\n"
+"                    </div>\n"
+"                    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"                        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"                            {{object.company_id.partner_id.sudo().with_context(show_address=True,\n"
+"                            html_format=True).name_get()[0][1] }}\n"
+"                        </span>\n"
+"                        <t t-if=\"object.company_id.phone\">\n"
+"\n"
+"                            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                                Phone:{{object.company_id.phone}}\n"
+"                            </div>\n"
+"                        </t>\n"
+"                        <t t-if=\"object.company_id.website\">\n"
+"\n"
+"                            <div>\n"
+"                                Web :\n"
+"                                <a href=\"%7B%7Bobject.company_id.website%7D%7D\">{{object.company_id.website}}</a>\n"
+"                            </div>\n"
+"                        </t>\n"
+"                        <p/>\n"
+"                    </div>\n"
+"                </div>\n"
+"            </div>\n"
+"        "
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+msgid "<span style=\"color:solid black\">Customer Dues In Between Days</span>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+msgid "<span style=\"color:solid black\">Customer Overdue Statement</span>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+msgid "<span style=\"color:solid black\">Customer Payments</span>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+msgid "<span style=\"color:solid black\">Customer Statement</span>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+msgid "<span style=\"color:solid black\">Supplier Dues In Between Days</span>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+msgid "<span style=\"color:solid black\">Supplier Overdue Statement</span>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+msgid "<span style=\"color:solid black\">Supplier Payments</span>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+msgid "<span style=\"color:solid black\">Supplier Statement</span>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+msgid "<span style=\"color:solid black\">Supplies Payments</span>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid "<span style=\"color:white\">b</span>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid "<span> <strong>S T A T E M E N T</strong></span><br/>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid "<strong>Company:</strong><br/>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+msgid "<strong>Totals</strong>"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid "Account No:"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.view_account_statement
+msgid "Account Statement"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.actions.report,name:gt_customer_account_statement.report_cus_sup_report
+msgid "Account Statment Report"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid "Balance"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Bill Date"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Bill Number"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.view_account_statement
+msgid "Cancel"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,help:gt_customer_account_statement.field_res_partner__customer
+#: model:ir.model.fields,help:gt_customer_account_statement.field_res_users__customer
+msgid ""
+"Check this box if this contact is a customer. It can be selected in sales "
+"orders."
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,help:gt_customer_account_statement.field_res_partner__supplier
+#: model:ir.model.fields,help:gt_customer_account_statement.field_res_users__supplier
+msgid ""
+"Check this box if this contact is a vendor. It can be selected in purchase "
+"orders."
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_statement_report__company_id
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Company"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model,name:gt_customer_account_statement.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_statement_report__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_statement_report__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model,name:gt_customer_account_statement.model_account_statement_report
+msgid "Customer Account Statement Report"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__cus_overdue_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__cus_overdue_statement
+msgid "Customer Over Due Statement"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Customer Overdue Statement"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__cus_overdue_ids
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__cus_overdue_ids
+msgid "Customer Overdue Statements"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.actions.report,name:gt_customer_account_statement.print_customer_overdue_statement_report
+#: model:ir.actions.report,name:gt_customer_account_statement.print_supplier_overdue_statement_report
+msgid "Customer Overdue Statment"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__cus_payment_ids
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__cus_payment_ids
+msgid "Customer Payments"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__customer_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__customer_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Customer Statement"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__cus_account_ids
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__cus_account_ids
+msgid "Customer Statements"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.actions.report,name:gt_customer_account_statement.print_customer_statement_report
+msgid "Customer Statment"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid "Date"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid "Date :"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_statement_report__ageing_length
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__ageing_length
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__ageing_length
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Days Length"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid "Description"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_statement_report__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Due Date"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__filter_by
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__filter_by
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Filter By"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Filter By Date"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.view_account_statement
+msgid "Filter on Dates"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_statement_report__period_from
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__period_from
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__period_from
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "From"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_statement_report__id
+msgid "ID"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:mail.template,name:gt_customer_account_statement.email_template_customer_overdue_statements
+#: model:mail.template,name:gt_customer_account_statement.email_template_customer_statements
+#: model:mail.template,name:gt_customer_account_statement.email_template_supplier_overdue_statements
+#: model:mail.template,name:gt_customer_account_statement.email_template_supplier_statements
+msgid "Invoice - Send by Email"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Invoice Date"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Invoices"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid "Invoices/Debit"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__customer
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__customer
+msgid "Is a Customer"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__supplier
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__supplier
+msgid "Is a Vendor"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model,name:gt_customer_account_statement.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+msgid "Journal Entry Name"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model,name:gt_customer_account_statement.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_statement_report__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_statement_report__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Memo"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_bank_statement_line__new_company_id
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_move__new_company_id
+msgid "New Company"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_bank_statement_line__new_date_due
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_move__new_date_due
+msgid "New Due Date"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_bank_statement_line__new_date_invoice
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_move__new_date_invoice
+msgid "New Invoice Date"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+msgid "Numbe"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Number"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Overdue Statement"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_statement_report__partner_ids
+msgid "Partners"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Payment Amount"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Payment Date"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Payments"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_bank_statement_line__paid_amount
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_move__paid_amount
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid "Payments/Credit"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.view_account_statement
+msgid "Print"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Print Account Statement"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Print Account Statement Without Dues"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.actions.act_window,name:gt_customer_account_statement.view_customer_statement_form
+msgid "Print Customer/Supplier Statement"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Print Overdue Payments"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid "Ref.No"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.view_account_statement
+msgid "Select Customers"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Send Account Statement"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Send Overdue Payments"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_move_line__stat_report
+msgid "Statement Report"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__sup_ageing_length
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__sup_ageing_length
+msgid "Sup Days Length"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__sup_filter_by
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__sup_filter_by
+msgid "Sup Filter By"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__sup_period_from
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__sup_period_from
+msgid "Sup From"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__sup_period_to
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__sup_period_to
+msgid "Sup To"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__sup_overdue_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__sup_overdue_statement
+msgid "Supplier Over Due Statement"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Supplier Overdue Statement"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__sup_overdue_ids
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__sup_overdue_ids
+msgid "Supplier Overdue Statements"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__sup_payment_ids
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__sup_payment_ids
+msgid "Supplier Payments"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__supplier_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__supplier_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Supplier Statement"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__sup_account_ids
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__sup_account_ids
+msgid "Supplier Statements"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.actions.report,name:gt_customer_account_statement.print_supplier_statement_report
+msgid "Supplier Statment"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.report_view_account_stamt
+msgid "TIN:"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#. odoo-python
+#: code:addons/gt_customer_account_statement/models/customer.py:0
+#: code:addons/gt_customer_account_statement/models/supplier.py:0
+#: code:addons/gt_customer_account_statement/wizard/account_statement.py:0
+msgid "The start date must be anterior to the end date."
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_account_statement_report__period_to
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_partner__period_to
+#: model:ir.model.fields,field_description:gt_customer_account_statement.field_res_users__period_to
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "To"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_customer_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_overdue_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.email_supplier_statement_report
+#: model_terms:ir.ui.view,arch_db:gt_customer_account_statement.inherit_view_customer_form
+msgid "Total"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:mail.template,subject:gt_customer_account_statement.email_template_customer_statements
+#: model:mail.template,subject:gt_customer_account_statement.email_template_supplier_statements
+msgid "{{object.company_id.name}} Account Statement"
+msgstr ""
+
+#. module: gt_customer_account_statement
+#: model:mail.template,subject:gt_customer_account_statement.email_template_customer_overdue_statements
+#: model:mail.template,subject:gt_customer_account_statement.email_template_supplier_overdue_statements
+msgid "{{object.company_id.name}} Overdue Account Statement"
+msgstr ""

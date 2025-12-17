@@ -1,0 +1,46 @@
+<odoo>
+    <record id="view_account_move_form_inherit" model="ir.ui.view">
+        <field name="name">account.move.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']//field[@name='delivery_date']" position="after">
+                <!-- <field name="sales_workflow_id" readonly="1"/> -->
+                <field name="type" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_move_tree_inherit" model="ir.ui.view">
+        <field name="name">account.move.tree.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='status_in_payment']" position="after">
+                <!-- <field name="sales_workflow_id" string="Cash/Credit" widget="badge"/> -->
+                <field name="type" string="Cash/Credit" widget="badge"/>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button name="update_sales_workflow" string="Update Sales Workflow" type="object" class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_move_search_inherit" model="ir.ui.view">
+        <field name="name">account.move.search.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='due_date']" position="after">
+                <separator/>
+                <filter name="by_sales_workflow_cash" string="Cash" domain="[('type', 'in', ['cash'])]"/>
+                <filter name="by_sales_workflow_credit" string="Credit" domain="[('type', 'in', ['credit'])]"/>
+                <filter name="by_paid" string="Paid" domain="[('payment_state', 'in', ['paid'])]"/>
+
+            </xpath>
+            <xpath expr="//search/group/filter[@name='group_by_company']" position="after">
+                <filter name="by_sales_workflow" string="Cash/Credit" context="{'group_by': 'type'}" domain="[('type', '!=', False)]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

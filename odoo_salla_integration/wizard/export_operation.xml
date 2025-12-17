@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<odoo>
+	<data>
+	<!-- export category -->
+		<record id="export_odoo_categories_form" model="ir.ui.view">
+			<field name="name">export.categories.form</field>
+			<field name="model">export.categories</field>
+			<field name="inherit_id" ref="odoo_multi_channel_sale.export_odoo_categories_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//button[@name='cancel']" position="before">
+					<button
+						name  ="export_salla_categories"
+						type  ="object"
+						string="Synchronize"
+						invisible="channel != 'salla'"
+						class ="oe_highlight bg-success"
+					/>
+				</xpath>
+			</field>
+		</record>
+		<!-- Export template -->
+		<record id="export_odoo_templates_form" model="ir.ui.view">
+			<field name="name">export.templates.form</field>
+			<field name="model">export.templates</field>
+			<field name="inherit_id" ref="odoo_multi_channel_sale.export_odoo_templates_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//button[@name='cancel']" position="before">
+					<button
+						name  ="export_salla_templates"
+						type  ="object"
+						string="Synchronize"
+						invisible="channel != 'salla'"
+						class ="oe_highlight bg-success"
+					/>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit Sale Order Form -->
+    <record id="view_order_form_inherit_commission" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.commission</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale_info']" position="after">
+                <group string="Commission">
+                    <field name="commission_type" readonly="state != 'draft'"/>
+                    <field name="commission_rate" invisible="commission_type == 'fixed'" required="commission_type == 'rate'" readonly="state != 'draft'"/>
+                    <field name="fixed_amount" invisible="commission_type != 'fixed'" required="commission_type == 'fixed'" readonly="state != 'draft'"/>
+                    <field name="customer_salesperson" string="Purchasing Person" domain="[('parent_id', '=', partner_id)]" options="{'no_create': True}" readonly="state != 'draft'" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

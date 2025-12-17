@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree view for warehouse.stock.line -->
+    <record id="warehouse_stock_line_tree" model="ir.ui.view">
+        <field name="name">warehouse.stock.line.tree</field>
+        <field name="model">warehouse.stock.line</field>
+        <field name="arch" type="xml">
+            <list create="0" delete="0" edit="0">
+                <field name="warehouse_name"/>
+                <field name="location_name"/>
+                <field name="quantity"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form view for stock.details.wizard -->
+    <record id="view_stock_details_wizard_form" model="ir.ui.view">
+        <field name="name">stock.details.wizard.form</field>
+        <field name="model">stock.details.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Stock Details">
+                <sheet>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="product_cost"/>
+                    </group>
+                    <field name="warehouse_stock_ids" nolabel="1"/>
+                </sheet>
+                <footer>
+                    <button string="Close" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

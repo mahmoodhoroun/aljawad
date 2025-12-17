@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="reset_password_email_inherit" inherit_id="auth_signup.reset_password_email">
+        <xpath expr="//tr[.//td[contains(.,'Powered by')]]" position="replace">
+        </xpath>
+    </template>
+
+    <template id="alert_login_new_device_inherit" inherit_id="auth_signup.alert_login_new_device">
+        <xpath expr="//tr[.//td[contains(.,'Powered by')]]" position="replace">
+        </xpath>
+    </template>
+</odoo>

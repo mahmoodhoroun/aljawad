@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_inherit_lowest_price" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.lowest.price</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/list//field[@name='price_unit']" position="after">
+                <field name="lowest_selling_price" column_invisible="1"/>
+                <field name="lowest_price" optional="show" string="Lowest Price" column_invisible="not parent.lowest_selling_price"/>
+                <field name="standard_price" groups="lowest_selling_price.group_show_cost"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="after">
+                <field name="lowest_selling_price" invisible="1"/>
+                <field name="lowest_price" string="Lowest Price" invisible="not parent.lowest_selling_price"/>
+                <field name="standard_price" groups="lowest_selling_price.group_show_cost"/>
+            </xpath>
+
+            <!-- <xpath expr="//button[@id='action_confirm']" position="replace">
+                <field name="lowest_selling_price" invisible="1"/>
+                <button name="check_lowest_price_permission" data-hotkey="q" string="Confirm" class="btn-primary" type="object" context="{'validate_analytic': True}" invisible="state != 'sent' or not lowest_selling_price"/>
+                <button name="action_confirm" data-hotkey="q" string="Confirm" class="btn-primary" type="object" context="{'validate_analytic': True}" invisible="state != 'sent' or lowest_selling_price"/>
+            </xpath>
+
+            <xpath expr="//button[@name='action_confirm'][not(@id)]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath> -->
+            <xpath expr="//button[@name='action_confirm'][1]" position="replace">
+                <field name="lowest_selling_price" invisible="1"/>
+                <field name="allow_sell_bellow_cost" invisible="1"/>
+                <button name="check_lowest_price_permission" data-hotkey="q" string="Confirm" class="btn-primary" type="object" context="{'validate_analytic': True}" invisible="state != 'sent' or not (lowest_selling_price or allow_sell_bellow_cost)"/>
+                <button name="action_confirm" data-hotkey="q" string="Confirm" class="btn-primary" type="object" context="{'validate_analytic': True}" invisible="state != 'sent' or (lowest_selling_price or allow_sell_bellow_cost)"/>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm'][2]" position="replace">
+                <field name="lowest_selling_price" invisible="1"/>
+                <field name="allow_sell_bellow_cost" invisible="1"/>
+                <button name="check_lowest_price_permission" data-hotkey="q" string="Confirm" type="object" context="{'validate_analytic': True}" invisible="state != 'draft' or not (lowest_selling_price or allow_sell_bellow_cost)"/>
+                <button name="action_confirm" data-hotkey="q" string="Confirm" type="object" context="{'validate_analytic': True}" invisible="state != 'draft' or (lowest_selling_price or allow_sell_bellow_cost)"/>
+            </xpath>
+        </field>
+    </record>
+
+     <record id="view_order_form_inherit_total_cost" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.total.cost</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_discount_total.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_untaxed']" position="after">
+                <field name="total_cost" widget='monetary' options="{'currency_field': 'currency_id'}" groups="lowest_selling_price.group_show_cost" invisible="not show_total_cost_net_profit"/>
+                <field name="net_profit" widget='monetary' options="{'currency_field': 'currency_id'}" groups="lowest_selling_price.group_show_cost" invisible="not show_total_cost_net_profit"/>
+            </xpath>
+
+            <xpath expr="//label[@for='amount_total']" position="before">
+                <button name="show_hide_total_cost" type="object" icon="fa-dollar" />
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

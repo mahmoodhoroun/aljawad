@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="view_order_form_warehouse_selector" model="ir.ui.view">
+			<field name="name">sale.order.warehouse.selector.form</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//page/field[@name='order_line']/list/field[@name='price_subtotal']" position="after">
+					<button name="select_warehouse_quantity_wizard" type="object" class="btn" icon="fa-bars"
+					        attrs="{'invisible':[('state', '!=', 'draft')]}" title="Select quantity from different warehouses"/>
+				</xpath>
+			</field>
+		</record>
+
+		<record id="sale_order_line_warehouse_selection_view" model="ir.ui.view">
+			<field name="name">sale.order.line.from</field>
+			<field name="model">sale.order.line</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="company_id" invisible="1"/>
+								<field name="product_id" readonly="1"/>
+							</group>
+							<group>
+								<field name="product_uom_qty" readonly="1"/>
+							</group>
+						</group>
+						<notebook>
+							<page string="Product Quantity Allocation">
+								<field name="warehouse_ids">
+									<list editable="bottom" decoration-danger="qty &gt; available_qty_product">
+										<field name="warehouse_id" required="1" readonly="1" force_save="1"/>
+										<field name="qty" required="1"/>
+										<field name="available_qty_product" readonly="1" force_save="1"/>
+										<field name="uom_id" readonly="1" force_save="1"/>
+									</list>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+					<footer>
+						<button name="close_action_window" type="object" class="oe_highlight" string="Save"/>
+						<button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</odoo>

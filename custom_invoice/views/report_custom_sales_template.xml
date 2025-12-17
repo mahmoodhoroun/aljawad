@@ -1,0 +1,227 @@
+<odoo>
+
+    <template id="report_custom_sales">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="company" t-value="o.company_id"/>
+
+                <!-- HEADER -->
+                <div class="header">
+                    <table class="table table-sm" style="line-height: 0.8; border: none;">
+                    <tbody style="border: none;">
+                        <tr style="border: none;">
+                            <td style="text-align: left; border: none;"><span t-esc="company.english_company_name"/></td>
+                            <td rowspan="5" style="border: none;"> <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 120px; width: 250px; "/></td>
+                            <td style="text-align: right; border: none;"><span t-esc="company.name"/></td>
+                        </tr>
+                        <tr style="border: none;">
+                            <td style="text-align: left; border: none;">
+                            <span t-esc="company.country_id.with_context(lang='en_US').name"/> - 
+                            <span t-esc="company.english_city_name"/> - 
+                            <span t-esc="company.state_id.with_context(lang='en_US').name"/>
+                            </td>
+                            <td style="text-align: right; border: none;">
+                                <span t-esc="company.country_id.with_context(lang='ar_001').name"/> - 
+                                <span t-esc="company.city"/> - 
+                                <span t-esc="company.state_id.with_context(lang='ar_001').name"/>
+                            </td>
+                        </tr>
+                        <tr style="border: none;">
+                            <td style="text-align: left; border: none;"><span>VAT NO.</span><span t-esc="company.vat"/></td>
+                            <td style="text-align: right; border: none;"><span>الرقم الضريبي</span> <span t-esc="company.vat"/></td>
+                        </tr>
+                        <tr style="border: none;">
+                            <td style="text-align: left; border: none;"><span>CR.</span><span t-if="company.l10n_sa_additional_identification_number" t-esc="company.l10n_sa_additional_identification_number"/></td>
+                            <td style="text-align: right; border: none;"><span>السجل التجاري</span> <span t-if="company.l10n_sa_additional_identification_number" t-esc="company.l10n_sa_additional_identification_number"/></td>
+                        </tr>
+                        <tr style="border: none;">
+                            <td style="text-align: left; border: none;"><span>Email:</span> <span t-esc="company.email"/></td>
+                            <td style="text-align: right; border: none;"> <span t-esc="company.email"/> <span style="text-align: left">البريد الالكتروني</span></td>
+                        </tr>
+                    </tbody>
+                    </table>
+
+                    <div style="text-align: center; margin-top: -10px;">
+                        <h5 t-if="o.state == 'draft'">عرض سعر - Quotation</h5>
+                        <h5 t-if="o.state == 'sale'">أمر بيع - Sales Order</h5>
+                    </div>
+                    <div style="border: 1px solid #000;">
+                    </div>
+                </div>
+
+                <!-- BODY -->
+                <div class="page">
+                    <div>
+                        <div style="width: 48%; float: left; margin-right: 2%;">
+                            <table class="table table-sm" style="border: none;">
+                                <tbody style="border: none;">
+                                    <tr style="border: none;">
+                                        <td style="text-align: left; border: none; width: 30%">Customer No.</td>
+                                        <td style="text-align: center; border: none; width: 40%"><t t-esc="o.partner_id.id"/></td>
+                                        <td style="text-align: right; border: none; width: 30%">رقم العميل</td>
+                                    </tr>
+                                    <tr style="border: none;">
+                                        <td style="text-align: left; border: none;">Customer Name</td>
+                                        <td style="text-align: center; border: none;"><t t-esc="o.partner_id.name"/></td>
+                                        <td style="text-align: right; border: none;">اسم العميل</td>
+                                    </tr>
+                                    <tr style="border: none;">
+                                        <td style="text-align: left; border: none;">Customer Vat</td>
+                                        <td style="text-align: center; border: none;"><t t-esc="o.partner_id.vat"/></td>
+                                        <td style="text-align: right; border: none;">الرقم الضريبي</td>
+                                    </tr>
+                                    <tr style="border: none;">
+                                        <td style="text-align: left; border: none;">Customer Address</td>
+                                        <td style="text-align: center; border: none;"><t t-esc="o.partner_id.contact_address"/></td>
+                                        <td style="text-align: right; border: none;">العنوان</td>
+                                    </tr>
+                                    <tr style="border: none;">
+                                        <td style="text-align: left; border: none;">Po No</td>
+                                        <td style="text-align: center; border: none;"><t t-esc="o.purchase_order"/></td>
+                                        <td style="text-align: right; border: none;">رقم الطلب</td>
+                                    </tr>
+                                    <tr style="border: none;">
+                                        <td style="text-align: left; border: none;">CR</td>
+                                        <td style="text-align: center; border: none;"><t t-esc="o.partner_id.l10n_sa_additional_identification_number"/></td>
+                                        <td style="text-align: right; border: none;">السجل التجاري</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div style="width: 48%; float: left;">
+                            <table class="table table-sm" style="border: none;">
+                                <tbody style="border: none;">
+                                    <tr style="border: none;">
+                                        <td style="text-align: left; border: none;">Salesman</td>
+                                        <td style="text-align: center; border: none;"><t t-esc="o.user_id.name"/></td>
+                                        <td style="text-align: right; border: none;">اسم البائع</td>
+                                    </tr>
+                                    <tr style="border: none;">
+                                        <td style="text-align: left; border: none;" t-if="o.state == 'draft'">Quotation No</td>
+                                        <td style="text-align: left; border: none;" t-if="o.state == 'sale'">Order No</td>
+                                        <td style="text-align: center; border: none;"><t t-esc="o.name"/></td>
+                                        <td style="text-align: right; border: none;" t-if="o.state == 'draft'">رقم عرض السعر</td>
+                                        <td style="text-align: right; border: none;" t-if="o.state == 'sale'">رقم أمر البيع</td>
+                                    </tr>
+                                    <tr style="border: none;">
+                                        <td style="text-align: left; border: none;">Date</td>
+                                        <td style="text-align: center; border: none;"><t t-esc="o.date_order"/></td>
+                                        <td style="text-align: right; border: none;">التاريخ</td>
+                                    </tr>
+
+                                    <tr style="border: none;">
+                                        <td style="text-align: left; border: none;">Plate Number</td>
+                                        <td style="text-align: center; border: none;"><t t-esc="o.plate_number"/></td>
+                                        <td style="text-align: right; border: none;">رقم اللوحة</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="clear: both;"></div>
+
+                        <div style="margin-top: 20px;">
+                            <table class="table table-sm table-bordered" style="border: 1px solid #000;">
+                                <thead>
+                                    <tr style="background-color: #f8f9fa; border: 1px solid #000;">
+                                        <th style="text-align: center; border: 1px solid #000;">S.N</th>
+                                        <th style="text-align: center; border: 1px solid #000;">Part No.-رقم القطعة</th>
+                                        <th style="text-align: center; border: 1px solid #000; width: 35%;">Part Name-القطعة</th>
+                                        <th style="text-align: center; border: 1px solid #000;">Barcode-الباركود</th>
+                                        <th style="text-align: center; border: 1px solid #000;">QTY-الكمية</th>
+                                        <th style="text-align: center; border: 1px solid #000;">Price-السعر</th>
+                                        <th style="text-align: center; border: 1px solid #000;">VAT 15%-الضريبة</th>
+                                        <th style="text-align: center; border: 1px solid #000;">Total-الاجمالي</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-set="counter" t-value="1"/>
+                                    <t t-foreach="o.order_line" t-as="line">
+                                        <t t-if="line.product_id.default_code != 'discount'">
+                                            <tr style="border: 1px solid #000;">
+                                                <td style="text-align: center; border: 1px solid #000;"><t t-esc="counter"/></td>
+                                                <td style="text-align: center; border: 1px solid #000;"><t t-esc="line.product_id.default_code or ''"/></td>
+                                                <td style="text-align: center; border: 1px solid #000;">
+                                                    <t t-esc="line.product_id.name"/>
+                                                    <t t-set="description_lines" t-value="line.name.split('\n') if line.name else []"/>
+                                                    <t t-if="len(description_lines) > 1">
+                                                        <br/>
+                                                        <span style="font-size: 11px; color: #666;"><t t-esc="'\n'.join(description_lines[1:])"/></span>
+                                                    </t>
+                                                </td>
+                                                <td style="text-align: center; border: 1px solid #000;"><t t-esc="line.product_id.barcode"/></td>
+                                                <td style="text-align: center; border: 1px solid #000;"><t t-esc="line.product_uom_qty"/></td>
+                                                <td style="text-align: center; border: 1px solid #000;"><t t-esc="line.price_unit" t-options='{"widget": "float", "precision": 2}'/></td>
+                                                <td style="text-align: center; border: 1px solid #000;"><t t-esc="line.price_tax" t-options='{"widget": "float", "precision": 2}'/></td>
+                                                <t t-set="amount_total_with_vat" t-value="line.price_unit * line.product_uom_qty + line.price_tax"/>
+                                                <td style="text-align: center;border: 1px solid #000;"><t t-esc="amount_total_with_vat" t-options='{"widget": "float", "precision": 2}'/></td>
+                                            </tr>
+                                            <t t-set="counter" t-value="counter + 1"/>
+                                        </t>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <div style="width: 48%; float: left; margin-right: 2%;">
+                        <div style="width:170px; height:170px; text-align: center; margin-left: 25%;">
+                            <!-- <img t-if="o.l10n_sa_qr_code_str"
+                                t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', quote_plus(o.l10n_sa_qr_code_str), 140, 140)"/> -->
+                        </div>
+                    </div>
+
+                    <div style="width: 48%; float: left;">
+                        <table class="table table-sm" style="border: none;">
+                            <tbody style="border: none;">
+                                <tr style="border: none;">
+                                    <t t-set="amount_toatal2" t-value="sum(line.product_uom_qty * line.price_unit for line in o.order_line if line.product_id.default_code != 'discount')"/>
+                                    <td style="text-align: left; border: none;">Total Befor VAT - الاجمالي قبل الضريبة</td>
+                                    <td style="text-align: center; border: none;"><t t-esc="amount_toatal2"/></td>
+                                    <!-- <td style="text-align: right; border: none;">الاجمالي قبل الضريبة</td> -->
+                                </tr>
+                                <tr style="border: none;">
+                                    <t t-set="amount_discount" t-value="amount_toatal2 - o.amount_untaxed"/>
+                                    <td style="text-align: left; border: none;">Discount - الخصم</td>
+                                    <td style="text-align: center; border: none;"><t t-esc="'{:.2f}'.format(amount_discount)" /></td>
+                                    <!-- <td style="text-align: right; border: none;">الخصم</td> -->
+                                </tr>
+                                <tr style="border: none;">
+                                    <td style="text-align: left; border: none;">VAT - قيمة الضريبة</td>
+                                    <td style="text-align: center; border: none;"><t t-esc="o.amount_tax"/></td>
+                                    <!-- <td style="text-align: right; border: none;">قيمة الضريبة</td> -->
+                                </tr>
+                                <tr style="border: none;">
+                                    <td style="text-align: left; border: none;">Net Total With VAT - الاجمالي بعد الضريبة</td>
+                                    <td style="text-align: center; border: none;"><t t-esc="o.amount_total"/></td>
+                                    <!-- <td style="text-align: right; border: none;">الاجمالي بعد الضريبة</td> -->
+                                </tr>
+
+                                <tr style="border: none;">
+                                    <td style="text-align: center; border: none; colspan=2"> <span t-if="o.currency_id" t-esc="o.currency_id.with_context(lang='ar_001').amount_to_text(o.amount_total)"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="clear: both;"></div>
+
+                </div>
+
+                <!-- FOOTER -->
+                <div class="footer">
+                    <div style="border: 1px solid #000;">
+                    </div>
+
+                    <div style="width: 100%; text-align: center;">
+                        <span t-esc="company.email"/>  |   
+                        <span t-esc="company.phone"/>
+                    </div>
+                </div>
+
+            </t>
+        </t>
+    </template>
+
+</odoo>

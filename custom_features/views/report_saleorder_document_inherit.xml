@@ -1,0 +1,13 @@
+<odoo>
+    <template id="report_saleorder_document_custom" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//th[@name='th_description']" position="replace">
+            <th name="th_code" class="text-start">Part Number</th>
+            <th name="th_name" class="text-start">Name</th>
+        </xpath>
+
+        <xpath expr="//td[@name='td_name']" position="replace">
+            <td name="td_code"><span t-field="line.product_id.default_code">PROD001</span></td>
+            <td name="td_name"><span t-field="line.product_id.name">Bacon Burger</span></td>
+        </xpath>
+    </template>
+</odoo>

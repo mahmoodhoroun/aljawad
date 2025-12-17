@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Inherit the purchase order form view -->
+    <record id="purchase_order_inherit_view_form" model="ir.ui.view">
+        <field name="name">purchase.order.inherit.view.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_ref" position="after">
+                <field name="workflow_id"/>
+                <field name="allow_multiple_payment" invisible="1"/>
+            </field>
+            <xpath expr="//notebook" position="inside">
+                <page string="Payments" name="payments" invisible="not workflow_id or not allow_multiple_payment">
+                    <group>
+                        <field name="payment_ids" context="{'default_company_id': company_id}"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inherit the custom payment tree view -->
+    <record id="view_custom_payment_tree" model="ir.ui.view">
+        <field name="name">custom.account.payment.tree</field>
+        <field name="model">custom.account.payment</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="company_id" column_invisible="1"/>
+                <field name="currency_id" column_invisible="1"/>
+                <field name="payment_journal"/>
+                <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            </list>
+        </field>
+    </record>
+</odoo>

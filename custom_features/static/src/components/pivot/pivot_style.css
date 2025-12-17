@@ -1,0 +1,6 @@
+.o_pivot_measure_row {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #f9f9f9;
+}

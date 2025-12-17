@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+    <t t-inherit="sale.SaleActionHelper" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_nocontent_help')]/div/a" position="replace">
+            <!-- Remove the video preview section -->
+        </xpath>
+    </t>
+</templates>

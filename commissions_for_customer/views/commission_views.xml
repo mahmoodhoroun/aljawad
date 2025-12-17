@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- Tree View -->
+    <record id="view_sales_commission_list" model="ir.ui.view">
+        <field name="name">sales.commission.list</field>
+        <field name="model">sales.commission</field>
+        <field name="arch" type="xml">
+            <list string="Sales Commissions">
+                <header>
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                    <button name="%(action_commission_payment_wizard)d" string="Pay" type="action"/>
+                    <button name="update_company_from_sale_order" string="Update Company from Sale Order" type="object" class="btn-secondary"/>
+                </header>
+                <field name="commission_number"/>
+                <!-- <field name="salesperson_id"/> -->
+                <!-- <field name="partner_id"/> -->
+                <field name="customer_salesperson"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="quotation_id"/>
+                <field name="invoice_id"/>
+                <!-- <field name="part_number"/> -->
+                <field name="total"/>
+                <field name="paid"/>
+                <!-- <field name="not_paid"/> -->
+                <field name="commission_type"/>
+                <field name="commission_rate"/>
+                <field name="fixed_amount"/>
+                <field name="commission_value"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_sales_commission_form" model="ir.ui.view">
+        <field name="name">sales.commission.form</field>
+        <field name="model">sales.commission</field>
+        <field name="arch" type="xml">
+            <form string="Sales Commission">
+                <header>
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight" invisible="status != 'draft'"/>
+                    <button name="reset_to_draft" string="Reset to Draft" type="object" class="oe_highlight" invisible="status != 'confirmed'"/>
+                    <button name="%(action_commission_payment_wizard)d" string="Pay" type="action" class="oe_highlight" invisible="status != 'confirmed'"/>
+                    <field name="status" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_view_moves" icon="fa-book">
+                            <field name="move_count" widget="statinfo" string="Journal Entries"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="commission_number" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <!-- <field name="salesperson_id"/> -->
+                            <!-- <field name="partner_id" readonly="status != 'draft'"/> -->
+                            <field name="customer_salesperson" string="Purchasing Person" readonly="status != 'draft'"/>
+                            <field name="commission_date" readonly="status != 'draft'"/>
+                            <field name="quotation_id" readonly="status != 'draft'"/>
+                            <field name="invoice_id" readonly="status != 'draft'"/>
+                            <field name="company_id" groups="base.group_multi_company" readonly="status != 'draft'"/>
+                            <!-- <field name="part_number" readonly="status != 'draft'"/> -->
+                        </group>
+                        <group>
+                            <field name="total"/>
+                            <field name="total_before_tax"/>
+                            <!-- <field name="paid" readonly="status != 'draft'"/> -->
+                            <!-- <field name="not_paid"/> -->
+                            <field name="commission_type" readonly="status != 'draft'"/>
+                            <field name="commission_rate" invisible="commission_type == 'fixed'" required="commission_type == 'rate'" readonly="status != 'draft'"/>
+                            <field name="fixed_amount" invisible="commission_type != 'fixed'" required="commission_type == 'fixed'" readonly="status != 'draft'"/>
+                            <field name="commission_value"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_sales_commission_search" model="ir.ui.view">
+        <field name="name">sales.commission.search</field>
+        <field name="model">sales.commission</field>
+        <field name="arch" type="xml">
+            <search string="Sales Commissions">
+                <field name="commission_number"/>
+                <!-- <field name="salesperson_id"/> -->
+                <field name="partner_id"/>
+                <field name="quotation_id"/>
+                <field name="invoice_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <!-- <field name="part_number"/> -->
+                <separator/>
+                <filter string="Draft" name="draft" domain="[('status', '=', 'draft')]"/>
+                <filter string="Confirmed" name="confirmed" domain="[('status', '=', 'confirmed')]"/>
+                <filter string="Paid" name="paid" domain="[('status', '=', 'paid')]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Partner" name="group_by_partner" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Status" name="group_by_status" context="{'group_by': 'status'}"/>
+                    <filter string="Company" name="group_by_company" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_sales_commission" model="ir.actions.act_window">
+        <field name="name">Sales Commissions</field>
+        <field name="res_model">sales.commission</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_sales_commission_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first sales commission!
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_sales_commission_root"
+        name="Sales Commissions"
+        web_icon="commissions_for_customer,static/src/img/icon.png"
+        sequence="10"/>
+
+    <menuitem id="menu_sales_commission"
+        name="Commissions"
+        parent="menu_sales_commission_root"
+        action="action_sales_commission"
+        sequence="1"/>
+    </data>
+</odoo>

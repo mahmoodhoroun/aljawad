@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<record id="account_payment_form_inherited" model="ir.ui.view">
+            <field name="name">account.payment.form.inherited</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@for='amount']" position="before">
+                    <field name="paerner_debit" string="Vendor" readonly="state != 'draft'"
+                    invisible="('partner_type','!=','supplier') and ('is_internal_transfer', '=', True)"
+                    />
+                    <field name="partner_credit" string="Customer Credit" 
+                    readonly="state != 'draft'"
+                    invisible="('partner_type','!=','customer') and ('is_internal_transfer', '=', True)"
+                    />
+                </xpath>
+                <xpath expr='//sheet' position="inside">
+                    <group>
+                        <group>
+                            <field name="reconcile_payment" widget="radio" readonly="state != 'draft'"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <group string="Invoices" invisible="payment_type not in ('inbound', 'outbound') and partner_type not in('customer', 'supplier') and reconcile_payment != 'invoice_payment'" colspan="4">
+                        <field name="payment_invoice_ids" nolabel="1" colspan="2">
+                            <list editable="bottom" create="false" delete="0">
+                                <field name="invoice_id" readonly="1" force_save="1"/>
+                                <field name="origin" readonly="1"/>
+                                <field name="date_invoice" readonly="1"/>
+                                <field name="date_due" readonly="1"/>
+                                <field name="amount_total" readonly="1"/>
+                                <field name="residual" readonly="1" sum="residual" />
+                                <field name="reconcile_amount" readonly="1" force_save="1" sum="reconcile_amount"/>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="payment_state" invisible="1" />
+                                <button name="unlink" type="object" icon="fa-trash" invisible="parent.state != 'draft'"/>
+                            </list>
+                        </field>
+                        <button name="refresh_invoices" type="object" class="fa fa-refresh oe_inline" style="margin-left: 5px;" title="Refresh Invoices" aria-label="Refresh Invoices"/>
+                    </group>
+                </xpath>
+                <field name="payment_type" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

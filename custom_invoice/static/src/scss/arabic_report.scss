@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Tajawal';
+    src: url('/custom_invoice/static/src/fonts/Tajawal/Tajawal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+.page {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.invoice-arabic {
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+.arabic {
+    font-family: 'Tajawal', sans-serif !important;
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+// Special handling for wkhtmltopdf
+.wkhtmltopdf {
+    .invoice-arabic {
+        font-family: 'Tajawal', sans-serif !important;
+    }
+
+    // .arabic {
+    //     font-family: 'Tajawal', sans-serif !important;
+    //     direction: rtl !important;
+    //     text-align: right !important;
+    // }
+}

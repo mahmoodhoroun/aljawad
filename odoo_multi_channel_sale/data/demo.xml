@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<odoo noupdate="1">
+    <record id="channel_default_pricelist_id" model="product.pricelist">
+        <field name="name">Channel Pricelist</field>
+        <field name="active">False</field>
+    </record>
+</odoo>

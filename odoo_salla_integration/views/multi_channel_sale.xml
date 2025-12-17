@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!--"License URL :<https://store.webkul.com/license.html/>" -->
+<odoo>
+	<data>
+		<record id="salla_instance_view_form" model="ir.ui.view">
+			<field name="name">multi.channel.sale.from</field>
+			<field name="model">multi.channel.sale</field>
+			<field name="inherit_id" ref="odoo_multi_channel_sale.multi_channel_view_form"/>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='credentials']" position="attributes">
+					<attribute name="invisible">False</attribute>
+					<attribute name="invisible">channel == 'salla'</attribute>
+				</xpath>
+
+				<xpath expr="//page[@name='credentials']" position="after">
+					<page
+						name  ="salla_credentials"
+						string="Credentials"
+						groups="odoo_multi_channel_sale.group_multi_channel_admin"
+						invisible="channel != 'salla'"
+					>
+						<h2 style="margin-top: 10px !important;background-color: #e9ecef;padding-left: 8px;">
+									Channel Configuration
+						</h2>
+						<p class="text-muted" style="margin-left:5%">
+							Configuration for Odoo Multichannel Sale Salla Connector
+						</p>
+						<div class="row mt16 o_settings_container">
+							<div class="col-xs-12 col-md-6 o_setting_box">
+								<div class="o_setting_left_pane"/>
+								<div class="o_setting_right_pane">
+									<label string="Client ID" for="salla_client_id"/>
+									<div class="text-primary">
+										<b><field name="salla_client_id" placeholder="Client ID" invisible="state == 'validate'" readonly="state == 'validate'" required="channel == 'salla'"/></b>
+										<b><field name="salla_client_id" password="True" placeholder="Client ID" invisible="state != 'validate'" readonly="state == 'validate'" required="channel == 'salla'"/></b>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-6 o_setting_box">
+								<div class="o_setting_left_pane"/>
+								<div class="o_setting_right_pane">
+									<label string="Client Secret/Private Key" for="salla_client_secret"/>
+									
+									<div class="text-primary">
+										<b><field name="salla_client_secret" placeholder="Client secret key" invisible="state == 'validate'" readonly="state == 'validate'" required="channel == 'salla'"/></b>
+										<b><field name="salla_client_secret" password="True" placeholder="Client secret key" invisible="state != 'validate'" readonly="state == 'validate'" required="channel == 'salla'"/></b>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row mt16 o_settings_container">
+							<div class="col-xs-12 col-md-6 o_setting_box">
+								<div class="o_setting_left_pane"/>
+								<div class="o_setting_right_pane">
+									<label string="Callback-Url" for="salla_redirect_url"/>
+									<div class="text-muted">
+										Please add '/salla/authenticate' after your odoo url then paste this url to your salla application callback url
+										eg: 'https://odoo-base-url.com/salla/authenticate'
+									</div>
+									<div class="text-primary">
+										<field style="width:80%%" name="salla_redirect_url" readonly="state == 'validate'" required="channel == 'salla'" widget="CopyClipboardChar"/>
+									</div>
+								</div>
+							</div>
+						</div>
+						<br/><br/>
+						<!-- <field name="access_token"/> -->
+						<p>Create or manage the app at salla end <a target="_blank" href="https://salla.partners/apps">click here</a></p>
+					</page>
+				</xpath>
+				
+				<xpath expr="//button[@name='test_connection']" position="before">
+					<button
+						name  ="connect_to_salla"
+						groups="odoo_multi_channel_sale.group_multi_channel_admin"
+						string="Connect Salla"
+						title ="Connect Salla, Click to create connection with salla"
+						type  ="object"
+						class ="oe_highlight"
+						invisible ="state == 'validate' or channel != 'salla'"
+					/>
+				</xpath>
+			</field>
+		</record>
+
+		<record id="salla_instance_view_kanban" model="ir.ui.view">
+			<field name="name">multi.channel.sale.kanban</field>
+			<field name="model">multi.channel.sale</field>
+			<field name="inherit_id" ref="odoo_multi_channel_sale.multi_channel_view_kanban"/>
+			<field name="arch" type="xml">
+				<xpath expr="//div[hasclass('o_kanban_card_content')]" position="inside">
+					<div class="o_kanban_primary_left" >
+						<div t-if="record.channel.value == 'Salla'" style="color:rgb(162, 70, 137)">
+							<center>
+								<img
+									src="/odoo_salla_integration/static/description/thumbnail.png"
+									alt="salla_logo"
+									style="margin-left: 70px;"
+									height="160" width="160"
+								/>
+								<h3 style="margin-left: 70px;">
+									<t t-esc="record.name.value"/>
+								</h3>
+							</center>
+						</div>
+					</div>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

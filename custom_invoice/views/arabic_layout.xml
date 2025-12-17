@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Custom Arabic Layout Template -->
+    <template id="arabic_external_layout">
+        <t t-call="web.html_container">
+            <t t-set="body_classname" t-value="'container invoice-arabic'"/>
+            <div class="article invoice-arabic" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id">
+                <t t-raw="0"/>
+            </div>
+        </t>
+    </template>
+</odoo>

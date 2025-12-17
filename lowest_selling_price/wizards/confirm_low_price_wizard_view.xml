@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_confirm_low_price_wizard_form" model="ir.ui.view">
+        <field name="name">confirm.low.price.wizard.form</field>
+        <field name="model">confirm.low.price.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Confirm Low Price Products">
+                <p class="alert alert-warning">
+                    The following products have prices below their lowest selling price. Please review and confirm if you want to proceed.
+                </p>
+                <field name="sale_order_id" invisible="1"/>
+                <field name="text" readonly="1"/>
+                <footer>
+                    <button string="Confirm" name="action_confirm" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_confirm_low_price_wizard" model="ir.actions.act_window">
+        <field name="name">Confirm Low Price Products</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">confirm.low.price.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

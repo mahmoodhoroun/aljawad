@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_move_form_inherit_custom_features" model="ir.ui.view">
+            <field name="name">account.move.form.inherit.custom.features</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_line_ids']/list//field[@name='price_unit']" position="after">
+                    <field name="price_after_tax" force_save="1"/>
+                    <!-- <field name="price_total" force_save="1"/>
+                    <field name="price_subtotal" force_save="1"/> -->
+
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/form//field[@name='price_unit']" position="after">
+                    <field name="price_after_tax" force_save="1"/>
+                    <!-- <field name="price_total" force_save="1"/>
+                    <field name="price_subtotal" force_save="1"/> -->
+                </xpath>
+                
+                <xpath expr="//header/button[@name='preview_invoice']" position="replace">
+                </xpath>
+                
+                
+                <!-- Add create_return_picking checkbox for credit notes -->
+                <xpath expr="//field[@name='payment_reference']" position="after">
+                    <field name="create_return_picking" invisible="move_type not in ['out_refund', 'in_refund']"/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_vendor_bill_id']" position="after">
+                    <field name="purchase_order" invisible="move_type not in ['out_invoice', 'out_refund']"/>
+                    <field name="plate_number" invisible="move_type not in ['out_invoice', 'out_refund']"/>
+                    <field name="phone_number_sale_order" invisible="move_type not in ['out_invoice', 'out_refund']"/>
+                    <field name="type" readonly="1"/>
+                </xpath>
+
+                <!-- <xpath expr="//button[@name='button_draft']" position="attributes">
+                    <attribute name="invisible">move_type in ['out_invoice', 'out_refund']</attribute>
+                </xpath> -->
+                
+                <!-- Add Zero Quantities button for credit notes -->
+                <xpath expr="//header" position="inside">
+                    <button name="action_zero_quantities" 
+                            string="Zero Quantities" 
+                            type="object" 
+                            class="btn-secondary" 
+                            invisible="move_type not in ['out_refund', 'in_refund'] or state != 'draft'"/>
+                </xpath>
+                
+            </field>
+        </record>
+        <!-- Invoice Pivot View -->
+        <record id="view_invoice_pivot_custom_features3" model="ir.ui.view" forcecreate="1">
+            <field name="name">account.move.pivot.custom.features</field>
+            <field name="model">account.move</field>
+            <field name="arch" type="xml">
+                <pivot string="Invoice Analysis" sample="1">
+                    <field name="company_id" type="row"/>
+                    <field name="invoice_user_id" type="row"/>
+                    <field name="invoice_date" invisible="1"/>
+                    
+                    <field name="type" invisible="1"/>
+                    
+                    <field name="cash_count" type="measure" string="Cash Count"/>
+                    <field name="cash_amount" type="measure" string="Cash Amount"/>
+                    <field name="credit_count" type="measure" string="Credit Count"/>
+                    <field name="credit_amount" type="measure" string="Credit Amount"/>
+                    
+                    <field name="total_sales" type="measure" string="Total Sales"/>
+                    
+                    <field name="cash_commission_value" type="measure" string="Total Cash Commission"/>
+                    <field name="credit_commission_value" type="measure" string="Total Credit Commission"/>
+                    <field name="commission_value" type="measure" string="Total Commission"/>
+                    <field name="net_sales_before_return" type="measure" string="Net Sales Before Return"/>
+                    <field name="return_count" type="measure" string="Return Count"/>
+                    <field name="return_cash_amount" type="measure" string="Return Cash Amount" />
+                    <field name="return_credit_amount" type="measure" string="Return Credit Amount"/>
+                    <field name="return_amount" type="measure" string="Return Amount"/>
+                    <field name="net_cash_sales" type="measure" string="Net Cash Sales"/>
+                    <field name="net_credit_sales" type="measure" string="Net Credit Sales"/>
+                    <field name="net_sales2" type="measure" string="Net Sales"/>
+                    
+                    <field name="move_type" invisible="1"/>
+                    <field name="partner_id" invisible="1"/>
+                    <field name="journal_id" invisible="1"/>
+                    <field name="customer_salesperson" invisible="1"/>
+                    <field name="commission_type" invisible="1"/>
+                    <field name="commission_rate" invisible="1"/>
+                    <field name="fixed_amount" invisible="1"/>
+                    <field name="is_return" invisible="1"/>
+                </pivot>
+            </field>
+        </record>
+        
+        
+        <record id="view_invoice_line_pivot_custom_features" model="ir.ui.view">
+            <field name="name">account.move.line.pivot.custom.features</field>
+            <field name="model">account.move.line</field>
+            <field name="arch" type="xml">
+                <pivot string="Invoice Line Analysis" display_quantity="true" sample="1">
+                    <field name="move_id" type="row"/>
+                    <field name="product_id" type="row"/>
+                    <field name="account_id" type="row"/>
+                    <field name="price_unit" type="measure" string="Unit Price"/>
+                    <field name="price_after_tax" type="measure" string="Price After Tax"/>
+                    <field name="price_subtotal" type="measure" string="Subtotal"/>
+                    <field name="price_total" type="measure" string="Total"/>
+                    <field name="quantity" type="measure" string="Quantity"/>
+                    <field name="move_id" type="col"/>
+                    <field name="move_name" type="col"/>
+                </pivot>
+            </field>
+        </record>
+        
+        
+        <record id="action_invoice_analysis_pivot" model="ir.actions.act_window">
+            <field name="name">Invoice Analysis</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">pivot</field>
+            <field name="domain">[('move_type', 'in', ['out_invoice', 'out_refund']), ('state', '=', 'posted')]</field>
+            <field name="context">{'pivot_measures': ['cash_count', 'cash_amount', 'credit_count', 'credit_amount', 'total_sales', 'cash_commission_value', 'credit_commission_value', 'commission_value', 'net_sales_before_return', 'return_count', 'return_cash_amount', 'return_credit_amount', 'return_amount', 'net_cash_sales', 'net_credit_sales', 'net_sales2']}</field>
+            <field name="view_id" ref="view_invoice_pivot_custom_features3"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    This pivot view provides invoice analysis grouped by day with workflow types (cash/credit),
+                    showing invoice counts, total sales, commissions, net sales, and returns.
+                </p>
+            </field>
+        </record>
+
+        
+        <record id="view_invoice_workflow_search" model="ir.ui.view">
+            <field name="name">account.move.workflow.search</field>
+            <field name="model">account.move</field>
+            <field name="arch" type="xml">
+                <search string="Invoice Workflow Analysis">
+                    <field name="invoice_date"/>
+                    <filter name="current_month" string="Current Month" domain="[('invoice_date', '&gt;=', (context_today() + relativedelta(day=1)).strftime('%Y-%m-%d')), ('invoice_date', '&lt;=', (context_today() + relativedelta(months=1, day=1, days=-1)).strftime('%Y-%m-%d'))]" />
+                    <filter name="last_month" string="Last Month" domain="[('invoice_date', '&gt;=', (context_today() + relativedelta(months=-1, day=1)).strftime('%Y-%m-%d')), ('invoice_date', '&lt;=', (context_today() + relativedelta(day=1, days=-1)).strftime('%Y-%m-%d'))]" />
+                    <separator/>
+                    
+                    <filter name="cash_workflow" string="Cash Invoices" domain="[('type', '=', 'cash')]"/>
+                    <filter name="credit_workflow" string="Credit Invoices" domain="[('type', '=', 'credit')]"/>
+                    <filter name="by_paid" string="Paid Invoices" domain="[('payment_state', 'in', ['paid'])]"/>
+                    <separator/>
+                    
+                    <filter name="regular_invoices" string="Regular Invoices" domain="[('move_type', '=', 'out_invoice')]"/>
+                    <filter name="return_invoices" string="Returns" domain="[('move_type', '=', 'out_refund')]"/>
+                    <filter name="with_returns" string="With Return Amount" domain="[('return_amount', '>', 0)]"/>
+                    <separator/>
+                    
+                    <filter name="group_by_invoice_date" string="Day" context="{'group_by': 'invoice_date:day'}"/>
+                    <filter name="group_by_invoice_date_week" string="Week" context="{'group_by': 'invoice_date:week'}"/>
+                    <filter name="group_by_invoice_date_month" string="Month" context="{'group_by': 'invoice_date:month'}"/>
+                    <filter name="group_by_company_id" string="Company" context="{'group_by': 'company_id'}"/>
+                    <filter name="group_by_invoice_user_id" string="Salesperson" context="{'group_by': 'invoice_user_id'}"/>
+                    <filter name="group_by_type" string="Workflow Type" context="{'group_by': 'type'}"/>
+                    <filter name="group_by_customer_salesperson" string="Purchasing Person" context="{'group_by': 'customer_salesperson'}"/>
+                    <filter name="group_by_is_return" string="Is Return" context="{'group_by': 'is_return'}"/>
+                    <filter name="group_by_move_type" string="Invoice Type" context="{'group_by': 'move_type'}"/>
+                </search>
+            </field>
+        </record>
+        
+        <menuitem id="menu_invoice_analysis"
+                name="Invoice Analysis"
+                parent="account.menu_finance_reports"
+                sequence="10"
+                action="action_invoice_analysis_pivot"/>
+                
+
+    </data> 
+</odoo>

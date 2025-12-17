@@ -1,0 +1,256 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* lowest_selling_price
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-26 20:16+0000\n"
+"PO-Revision-Date: 2025-05-26 20:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: lowest_selling_price
+#: model:res.groups,name:lowest_selling_price.group_allow_lower_price
+msgid "Allow Lower Price"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_res_config_settings__allow_sell_bellow_cost
+#: model:ir.model.fields,field_description:lowest_selling_price.field_sale_order__allow_sell_bellow_cost
+#: model:res.groups,name:lowest_selling_price.group_allow_sell_bellow_cost
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.res_config_settings_view_form_inherit_lowest_selling_price
+msgid "Allow Sell bellow Cost"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:res.groups,comment:lowest_selling_price.group_allow_lower_price
+msgid ""
+"Allow users to confirm sales orders with prices lower than the lowest price."
+msgstr ""
+
+#. module: lowest_selling_price
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.res_config_settings_view_form_inherit_lowest_selling_price
+msgid "Allow users to sell products bellow cost price"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:res.groups,comment:lowest_selling_price.group_allow_sell_bellow_cost
+msgid "Allow users to sell products bellow cost price."
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:res.groups,comment:lowest_selling_price.group_show_cost
+msgid "Allow users to show cost."
+msgstr ""
+
+#. module: lowest_selling_price
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.view_confirm_low_price_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model,name:lowest_selling_price.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.view_confirm_low_price_wizard_form
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.view_order_form_inherit_lowest_price
+msgid "Confirm"
+msgstr ""
+
+#. module: lowest_selling_price
+#. odoo-python
+#: code:addons/lowest_selling_price/models/sale_order.py:0
+msgid "Confirm Low Cost"
+msgstr ""
+
+#. module: lowest_selling_price
+#. odoo-python
+#: code:addons/lowest_selling_price/models/sale_order.py:0
+msgid "Confirm Low Price"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.actions.act_window,name:lowest_selling_price.action_confirm_low_price_wizard
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.view_confirm_low_price_wizard_form
+msgid "Confirm Low Price Products"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model,name:lowest_selling_price.model_confirm_low_price_wizard
+msgid "Confirm Low Price Wizard"
+msgstr ""
+
+#. module: lowest_selling_price
+#. odoo-python
+#: code:addons/lowest_selling_price/models/sale_order.py:0
+msgid "Confirm Low Price and Cost"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_sale_order_line__standard_price
+msgid "Cost"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_confirm_low_price_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_confirm_low_price_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_confirm_low_price_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.res_config_settings_view_form_inherit_lowest_selling_price
+msgid "Enable lowest selling price"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_confirm_low_price_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_confirm_low_price_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_confirm_low_price_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_sale_order_line__lowest_price
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.view_order_form_inherit_lowest_price
+msgid "Lowest Price"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_res_config_settings__lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_sale_order__lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_sale_order_line__lowest_selling_price
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.res_config_settings_view_form_inherit_lowest_selling_price
+msgid "Lowest Selling Price"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_res_config_settings__lowest_selling_price_pricelist_id
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.res_config_settings_view_form_inherit_lowest_selling_price
+msgid "Lowest Selling Price Pricelist"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_confirm_low_price_wizard__sale_order_id
+msgid "Sale Order"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model,name:lowest_selling_price.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model,name:lowest_selling_price.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,help:lowest_selling_price.field_res_config_settings__lowest_selling_price_pricelist_id
+msgid "Select the pricelist to be used for lowest selling price"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.res_config_settings_view_form_inherit_lowest_selling_price
+msgid "Set a pricelist for lowest selling price"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:res.groups,name:lowest_selling_price.group_show_cost
+msgid "Show Cost"
+msgstr ""
+
+#. module: lowest_selling_price
+#. odoo-python
+#: code:addons/lowest_selling_price/models/sale_order.py:0
+msgid ""
+"Some products are below the allowed price:\n"
+"\n"
+"- %s"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,field_description:lowest_selling_price.field_confirm_low_price_wizard__text
+msgid "Text"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.view_confirm_low_price_wizard_form
+msgid ""
+"The following products have prices below their lowest selling price. Please "
+"review and confirm if you want to proceed."
+msgstr ""
+
+#. module: lowest_selling_price
+#: model_terms:ir.ui.view,arch_db:lowest_selling_price.res_config_settings_view_form_inherit_lowest_selling_price
+msgid ""
+"This pricelist will be automatically selected when creating new sales orders"
+msgstr ""
+
+#. module: lowest_selling_price
+#: model:ir.model.fields,help:lowest_selling_price.field_sale_order_line__standard_price
+msgid ""
+"Value of the product (automatically computed in AVCO).\n"
+"        Used to value the product when the purchase cost is not known (e.g. inventory adjustment).\n"
+"        Used to compute margins on sale orders."
+msgstr ""
+
+#. module: lowest_selling_price
+#. odoo-python
+#: code:addons/lowest_selling_price/models/sale_order.py:0
+msgid "Warning for Price"
+msgstr ""
+
+#. module: lowest_selling_price
+#. odoo-python
+#: code:addons/lowest_selling_price/models/sale_order.py:0
+msgid ""
+"You are not allowed to confirm this order because the following products are below cost price:\n"
+"\n"
+"- \n"
+"- "
+msgstr ""
+
+#. module: lowest_selling_price
+#. odoo-python
+#: code:addons/lowest_selling_price/models/sale_order.py:0
+msgid ""
+"You are not allowed to confirm this order because the following products are below cost:\n"
+"\n"
+"- \n"
+"- "
+msgstr ""
+
+#. module: lowest_selling_price
+#. odoo-python
+#: code:addons/lowest_selling_price/models/sale_order.py:0
+msgid ""
+"You are not allowed to confirm this order because the following products are below lowest price:\n"
+"\n"
+"- \n"
+"- "
+msgstr ""

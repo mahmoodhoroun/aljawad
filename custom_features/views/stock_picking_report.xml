@@ -1,0 +1,28 @@
+
+<odoo>
+    <template id="report_delivery_document_custom" inherit_id="stock.report_delivery_document">
+        <xpath expr="//table[@name='stock_move_table']//span[@t-field='move.product_id']" position="replace">
+            [ <span t-field="move.product_id.default_code"/> ] <span t-field="move.product_id.name"/>
+        </xpath>
+    </template>
+    <template id="stock_report_delivery_has_serial_move_line_custom" inherit_id="stock.stock_report_delivery_has_serial_move_line">
+        <xpath expr="//span[@t-field='move_line.product_id']" position="replace">
+            [ <span t-field="move_line.product_id.default_code"/> ] <span t-field="move_line.product_id.name"/>
+        </xpath>
+    </template>
+
+   <template id="stock_report_delivery_aggregated_move_lines_custom"
+            inherit_id="stock.stock_report_delivery_aggregated_move_lines">
+        <!-- Don't match by @t-esc to avoid quoting headaches; target the first span in the first cell -->
+        <xpath expr="//td[1]/span[1]" position="replace">
+        <t t-if="aggregated_lines[line].get('product')">
+            [<span t-esc="aggregated_lines[line]['product'].default_code"/>] <span t-esc="aggregated_lines[line]['product'].name"/>
+        </t>
+        <t t-else="">
+            <span t-esc="aggregated_lines[line]['name']"/>
+        </t>
+    </xpath>
+  </template>
+    
+    
+</odoo>

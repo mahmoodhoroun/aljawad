@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_company_form_inherit" model="ir.ui.view">
+            <field name="name">res.company.form.inherit.payment.reconcile.fix</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                    <button name="action_fix_payment_reconcile" 
+                            type="object" 
+                            class="oe_stat_button" 
+                            icon="fa-refresh"
+                            confirm="This will modify existing payment reconciliation data for this company. Are you sure you want to continue?">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_text">Fix Payment</span>
+                            <span class="o_stat_text">Reconciliations</span>
+                        </div>
+                    </button>
+                    <button name="action_preview_zero_reconcile_cleanup" 
+                            type="object" 
+                            class="oe_stat_button" 
+                            icon="fa-eye">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_text">Preview Zero</span>
+                            <span class="o_stat_text">Cleanup</span>
+                        </div>
+                    </button>
+                    <button name="action_cleanup_zero_reconcile_amounts" 
+                            type="object" 
+                            class="oe_stat_button" 
+                            icon="fa-trash"
+                            confirm="This will delete all payment invoice records with zero reconcile amounts for this company. Are you sure you want to continue?">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_text">Cleanup Zero</span>
+                            <span class="o_stat_text">Amounts</span>
+                        </div>
+                    </button>
+                    <button name="action_auto_reconcile_oldest" 
+                            type="object" 
+                            class="oe_stat_button" 
+                            icon="fa-money"
+                            confirm="This will automatically reconcile unpaid invoices with unreconciled payments based on age (oldest first). Are you sure you want to continue?">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_text">Auto Reconcile</span>
+                            <span class="o_stat_text">Oldest First</span>
+                        </div>
+                    </button>
+                    <button name="action_auto_reconcile_reversals" 
+                            type="object" 
+                            class="oe_stat_button" 
+                            icon="fa-exchange"
+                            confirm="This will automatically reconcile invoices with their reversal entries. Are you sure you want to continue?">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_text">Reconcile</span>
+                            <span class="o_stat_text">Reversals</span>
+                        </div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

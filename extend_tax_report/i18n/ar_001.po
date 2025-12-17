@@ -1,0 +1,153 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* kb_extend_tax_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20210916\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-13 13:13+0000\n"
+"PO-Revision-Date: 2022-03-13 16:19+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: kb_extend_tax_report
+#: code:addons/kb_extend_tax_report/models/ir_report.py:0
+#, python-format
+msgid "%s model was not found"
+msgstr "%s الكائن غير متوفر"
+
+#. module: kb_extend_tax_report
+#. openerp-web
+#: code:addons/kb_extend_tax_report/static/src/js/report_action_manager.js:0
+#, python-format
+msgid ""
+"A popup window with your report was blocked. You may need to change your "
+"browser settings to allow popup windows for this page."
+msgstr ""
+"النافذة للتقرير حجبت، عليك تعديل اعدادات المتصفح لسماح بالنافذة المنبثقة "
+"لهذه الصفحة."
+
+#. module: kb_extend_tax_report
+#: model:ir.model,name:kb_extend_tax_report.model_report_report_xlsx_abstract
+msgid "Abstract XLSX Report"
+msgstr "ملخص تقرير XLSX"
+
+#. module: kb_extend_tax_report
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_kb_extend_tax_report_report_tax_excel__create_uid
+msgid "Created by"
+msgstr "انشاء بواسطة"
+
+#. module: kb_extend_tax_report
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_kb_extend_tax_report_report_tax_excel__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: kb_extend_tax_report
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_account_tax_report_wizard__display_name
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_ir_actions_report__display_name
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_accounting_pdf_reports_report_tax__display_name
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_kb_extend_tax_report_report_tax_excel__display_name
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_report_xlsx_abstract__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: kb_extend_tax_report
+#: code:addons/kb_extend_tax_report/reports/report_tax.py:0
+#, python-format
+msgid "Form content is missing, this report cannot be printed."
+msgstr "محتوى النموذج مفقود ، لا يمكن طباعة هذا التقرير."
+
+#. module: kb_extend_tax_report
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_account_tax_report_wizard__id
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_ir_actions_report__id
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_accounting_pdf_reports_report_tax__id
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_kb_extend_tax_report_report_tax_excel__id
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_report_xlsx_abstract__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: kb_extend_tax_report
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_account_tax_report_wizard____last_update
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_ir_actions_report____last_update
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_accounting_pdf_reports_report_tax____last_update
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_kb_extend_tax_report_report_tax_excel____last_update
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_report_xlsx_abstract____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: kb_extend_tax_report
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_kb_extend_tax_report_report_tax_excel__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: kb_extend_tax_report
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_report_kb_extend_tax_report_report_tax_excel__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: kb_extend_tax_report
+#: model_terms:ir.ui.view,arch_db:kb_extend_tax_report.extended_accounting_tax_report_view
+msgid "Print Excel"
+msgstr "طباعة التقرير الأكسل"
+
+#. module: kb_extend_tax_report
+#: model:ir.model,name:kb_extend_tax_report.model_ir_actions_report
+msgid "Report Action"
+msgstr "إجراء التقرير"
+
+#. module: kb_extend_tax_report
+#: model:ir.model,name:kb_extend_tax_report.model_report_kb_extend_tax_report_report_tax_excel
+msgid "Report Tax Excel"
+msgstr "طباعة التقرير الأكسل"
+
+#. module: kb_extend_tax_report
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_ir_actions_report__report_type
+msgid "Report Type"
+msgstr "نوع التقرير"
+
+#. module: kb_extend_tax_report
+#: model:ir.model,name:kb_extend_tax_report.model_account_tax_report_wizard
+#: model:ir.model,name:kb_extend_tax_report.model_report_accounting_pdf_reports_report_tax
+msgid "Tax Report"
+msgstr "تقرير الضريبة"
+
+#. module: kb_extend_tax_report
+#: model:ir.actions.report,name:kb_extend_tax_report.action_report_account_tax_excel
+msgid "Tax report"
+msgstr "تقرير الضريبة"
+
+#. module: kb_extend_tax_report
+#: model:ir.model.fields,field_description:kb_extend_tax_report.field_account_tax_report_wizard__tax_ids
+msgid "Taxes"
+msgstr "الضريبة"
+
+#. module: kb_extend_tax_report
+#: model:ir.model.fields,help:kb_extend_tax_report.field_ir_actions_report__report_type
+msgid ""
+"The type of the report that will be rendered, each one having its own "
+"rendering method. HTML means the report will be opened directly in your "
+"browser PDF means the report will be rendered using Wkhtmltopdf and "
+"downloaded by the user."
+msgstr ""
+"نوع التقرير الذي سيتم تقديمه ، ولكل تقرير طريقة عرض خاصة به. يعني HTML "
+"أن التقرير سيتم فتحه مباشرة في متصفحك. PDF يعني أن التقرير سيتم عرضه "
+"باستخدام Wkhtmltopdf وتنزيله بواسطة المستخدم. "
+
+#. module: kb_extend_tax_report
+#. openerp-web
+#: code:addons/kb_extend_tax_report/static/src/js/report_action_manager.js:0
+#, python-format
+msgid "Warning"
+msgstr "تحذير"
+
+#. module: kb_extend_tax_report
+#: model:ir.model.fields.selection,name:kb_extend_tax_report.selection__ir_actions_report__report_type__xlsx
+msgid "XLSX"
+msgstr ""

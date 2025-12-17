@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_product_template_form_bom_components" model="ir.ui.view">
+        <field name="name">product.template.form.bom.components</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <!-- Add BoM Components page -->
+            <xpath expr="//notebook" position="inside">
+                <page string="BoM Components" name="bom_components">
+                    <group>
+                        <group>
+                            <button name="action_load_bom_components" string="Load from BoM" type="object"
+                                    class="btn-primary"
+                                    help="Load components from the first Bill of Materials"/>
+                        </group>
+                    </group>
+                    <field name="bom_component_ids">
+                        <list editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="product_id"/>
+                            <field name="product_qty"/>
+                            <field name="product_uom_id"/>
+                            <field name="bom_line_id" column_invisible="1"/>
+                        </list>
+                    </field>
+                    <group>
+                        <div class="alert alert-info" role="alert">
+                            <strong>Note:</strong> Changes made here will automatically sync with the Bill of Materials and vice versa.
+                            If no BoM exists, one will be created automatically when you add components.
+                        </div>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

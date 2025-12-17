@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="inherit_view_customer_form_purchase" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="purchase.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='property_purchase_currency_id']" position="before">
+                <field name="supplier"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherit_view_customer_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='property_payment_term_id']" position="before">
+                <field name="customer"/>
+                <field name="supplier" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+
+
+                <!-->>>>>>>>>>>>>>>>>>>>>Customer Statement<<<<<<<<<<<<<<<<<<<<<<<<<  -->
+
+                <page string="Customer Statement">
+                    <field name="cus_overdue_statement" invisible="1"/>
+                    <field name="customer_statement" invisible="1"/>
+                    <group>
+                        <div class="o_row">
+                            <button name="action_customer_statement" type="object" class="oe_highlight"
+                                    string="Customer Statement"/>
+                            <button name="action_cus_overdue_statement" type="object" class="oe_highlight"
+                                    string="Overdue Statement"/>
+
+                            <button name="action_customer_statement_print" type="object" class="oe_highlight"
+                                    string="Print Account Statement"/>
+                            <button name="action_customer_statement_print_without_dues" type="object" class="oe_highlight"
+                                    string="Print Account Statement Without Dues"/>
+                            <button name="action_customer_statement_send" type="object" class="oe_highlight"
+                                    string="Send Account Statement"/>
+                            <button name="action_cus_overdue_statement_print" type="object" class="oe_highlight"
+                                    string="Print Overdue Payments"/>
+                            <button name="action_cus_overdue_statement_send" type="object" class="oe_highlight"
+                                    string="Send Overdue Payments"/>
+                        </div>
+                    </group>
+                    <group string="Filter By Date">
+                        <label for="filter_by"/>
+                        <div class="o_row">
+                            <field name="filter_by" class="oe_inline"/>
+                            From
+                            <field name="period_from" class="oe_inline"/>
+                            To
+                            <field name="period_to" class="oe_inline"/>
+                            Days Length
+                            <field name="ageing_length" class="oe_inline"/>
+                        </div>
+                    </group>
+
+                    <!-->>>>>>>>>>>>>>>>>>>>>Customer Statement<<<<<<<<<<<<<<<<<<<<<<<<<  -->
+                    <separator string="Customer Statement" invisible="not customer_statement"/>
+                    <field name="cus_account_ids" style="text-align: right;"
+                           invisible="not customer_statement">
+                        <list default_order='name'>
+                            <field name="new_date_invoice" string="Invoice Date"/>
+                            <field name="name"/>
+                            <field name="new_company_id" string="Company"/>
+                            <field name="new_date_due" string="Due Date"/>
+                            <field name="amount_total" string="Invoices" sum="Total"/>
+                            <field name="paid_amount" sum="Total"/>
+                            <field name="amount_residual" sum="Total" string="Balance"/>
+                        </list>
+                    </field>
+                    <separator string="Payments" invisible="not customer_statement"/>
+                    <field name="cus_payment_ids" style="text-align: right;"
+                           invisible="not customer_statement">
+                        <list>
+                            <field name="date" string="Payment Date"/>
+                            <field name="name" string="Number"/>
+                            <field name="company_id" string="Company"/>
+                            <field name="name" string="Memo"/>
+                            <field name="move_id"/>
+                            <field name="state" invisible="1"/>
+                            <field name="amount" string="Payment Amount" sum="Total"/>
+                        </list>
+                    </field>
+
+                    <!-->>>>>>>>>>>>>>>>>>>>>Customer Overdue Statement<<<<<<<<<<<<<<<<<<<<<<<<<  -->
+
+                    <separator string="Customer Overdue Statement"
+                               invisible="not cus_overdue_statement"/>
+                    <field name="cus_overdue_ids" style="text-align: right;"
+                           invisible="not cus_overdue_statement">
+                        <list default_order='name'>
+                            <field name="new_date_invoice" string="Invoice Date"/>
+                            <field name="name"/>
+                            <field name="new_company_id" string="Company"/>
+                            <field name="new_date_due" string="Due Date"/>
+                            <field name="amount_total" string="Invoices" sum="Total"/>
+                            <field name="paid_amount" sum="Total"/>
+                            <field name="amount_residual" sum="Total" string="Balance"/>
+                        </list>
+                    </field>
+                    <separator string="Payments" invisible="not cus_overdue_statement"/>
+                    <field name="cus_payment_ids" style="text-align: right;"
+                           invisible="not cus_overdue_statement">
+                        <list>
+                            <field name="date" string="Payment Date"/>
+                            <field name="name" string="Number"/>
+                            <field name="company_id" string="Company"/>
+                            <field name="name" string="Memo"/>
+                            <field name="move_id"/>
+                            <field name="state" invisible="1"/>
+                            <field name="amount" string="Payment Amount" sum="Total"/>
+                        </list>
+                    </field>
+                </page>
+
+                <!-->>>>>>>>>>>>>>>>>>>>>Supplier Details<<<<<<<<<<<<<<<<<<<<<<<<<  -->
+
+                <page string="Supplier Statement" invisible="not supplier">
+                    <field name="sup_overdue_statement" invisible="1"/>
+                    <field name="supplier_statement" invisible="1"/>
+                    <group>
+                        <div class="o_row">
+                            <button name="action_supplier_statement" type="object" class="oe_highlight"
+                                    string="Supplier Statement"/>
+                            <button name="action_sup_overdue_statement" type="object" class="oe_highlight"
+                                    string="Overdue Statement"/>
+
+                            <button name="action_supplier_statement_print" type="object" class="oe_highlight"
+                                    string="Print Account Statement"/>
+                            <button name="action_supplier_statement_print_without_dues" type="object" class="oe_highlight"
+                                    string="Print Account Statement Without Dues"/>
+                            <button name="action_supplier_statement_send" type="object" class="oe_highlight"
+                                    string="Send Account Statement"/>
+                            <button name="action_sup_overdue_statement_print" type="object" class="oe_highlight"
+                                    string="Print Overdue Payments"/>
+                            <button name="action_sup_overdue_statement_send" type="object" class="oe_highlight"
+                                    string="Send Overdue Payments"/>
+                        </div>
+                    </group>
+                    <group string="Filter By Date">
+                        <label for="sup_filter_by" string="Filter By"/>
+                        <div class="o_row">
+                            <field name="sup_filter_by" class="oe_inline"/>
+                            From
+                            <field name="sup_period_from" class="oe_inline"/>
+                            To
+                            <field name="sup_period_to" class="oe_inline"/>
+                            Days Length
+                            <field name="sup_ageing_length" class="oe_inline"/>
+                        </div>
+                    </group>
+
+                    <!-->>>>>>>>>>>>>>>>>>>>>Supplier Statement<<<<<<<<<<<<<<<<<<<<<<<<<  -->
+
+                    <separator string="Supplier Statement" invisible="not supplier_statement"/>
+                    <field name="sup_account_ids" style="text-align: right;"
+                           invisible="not supplier_statement">
+                        <list default_order='name'>
+                            <field name="new_date_invoice" string="Bill Date"/>
+                            <field name="name" string="Bill Number"/>
+                            <field name="new_company_id" string="Company"/>
+                            <field name="new_date_due" string="Due Date"/>
+                            <field name="amount_total" string="Invoices" sum="Total"/>
+                            <field name="paid_amount" sum="Total"/>
+                            <field name="amount_residual" sum="Total" string="Balance"/>
+                        </list>
+                    </field>
+                    <separator string="Payments" invisible="not supplier_statement"/>
+                    <field name="sup_payment_ids" style="text-align: right;"
+                           invisible="not supplier_statement">
+                        <list>
+                            <field name="date" string="Payment Date"/>
+                            <field name="name" string="Bill Number"/>
+                            <field name="company_id" string="Company"/>
+                            <field name="name" string="Memo"/>
+                            <field name="move_id"/>
+                            <field name="state" invisible="1"/>
+                            <field name="amount" string="Payment Amount" sum="Total"/>
+                        </list>
+                    </field>
+
+                    <!-->>>>>>>>>>>>>>>>>>>>>Supplier Overdue Statement<<<<<<<<<<<<<<<<<<<<<<<<<  -->
+
+                    <separator string="Supplier Overdue Statement"
+                               invisible="not sup_overdue_statement"/>
+                    <field name="sup_overdue_ids" style="text-align: right;"
+                           invisible="not sup_overdue_statement">
+                        <list default_order='name'>
+                            <field name="new_date_invoice" string="Bill Date"/>
+                            <field name="name" string="Bill Number"/>
+                            <field name="new_company_id" string="Company"/>
+                            <field name="new_date_due" string="Due Date"/>
+                            <field name="amount_total" string="Invoices" sum="Total"/>
+                            <field name="paid_amount" sum="Total"/>
+                            <field name="amount_residual" sum="Total" string="Balance"/>
+                        </list>
+                    </field>
+                    <separator string="Payments" invisible="not sup_overdue_statement"/>
+                    <field name="sup_payment_ids" style="text-align: right;"
+                           invisible="not sup_overdue_statement">
+                        <list>
+                            <field name="date" string="Payment Date"/>
+                            <field name="name" string="Bill Number"/>
+                            <field name="company_id" string="Company"/>
+                            <field name="name" string="Memo"/>
+                            <field name="move_id"/>
+                            <field name="state" invisible="1"/>
+                            <field name="amount" string="Payment Amount" sum="Total"/>
+                        </list>
+                    </field>
+
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

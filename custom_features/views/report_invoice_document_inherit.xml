@@ -1,0 +1,21 @@
+<odoo>
+    <template id="report_invoice_document_custom" inherit_id="account.report_invoice_document">
+        
+        <!-- Modify the table headers -->
+        <xpath expr="//th[@name='th_description']" position="replace">
+            <th name="th_code" class="text-start">Part Number</th>
+            <th name="th_name" class="text-start">Name</th>
+        </xpath>
+
+        <!-- Modify the product name field -->
+        <xpath expr="//td[@name='account_invoice_line_name']" position="replace">
+            <td name="account_invoice_line_code">
+                <span t-field="line.product_id.default_code" t-options="{'widget': 'text'}">PROD001</span>
+            </td>
+            <td name="account_invoice_line_name">
+                <span t-field="line.product_id.name" t-options="{'widget': 'text'}">Bacon Burger</span>
+            </td>
+        </xpath>
+
+    </template>
+</odoo>

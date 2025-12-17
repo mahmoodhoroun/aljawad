@@ -1,0 +1,25 @@
+.page.account-payment-page{
+    line-height:2;
+}
+
+.page.account-payment-page .border-bottom-dashed{
+    border-bottom: #424040 1px dashed;
+}
+.page.account-payment-page .border-bottom-solid{
+    border-bottom: #424040 1px solid;
+}
+
+.page.account-payment-page .amount-to-words{
+    font-size: 14px;
+}
+.page.account-payment-page .amount-currency{
+    border: #424040 1px solid;
+    border-radius: 15px;
+    padding: 1px 25px;
+}
+.page.account-payment-page .pl-10{
+    padding-left: 10px;
+}
+.page.account-payment-page .pr-10{
+    padding-right: 10px;
+}
