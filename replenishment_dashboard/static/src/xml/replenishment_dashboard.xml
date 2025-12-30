@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="replenishment_dashboard.Dashboard">
+        <div class="replenishment_dashboard">
+            <!-- Header Section -->
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">
+                    <i class="fa fa-bar-chart"></i>
+                    Replenishment Dashboard
+                </h1>
+                <button class="btn btn-primary btn-refresh" t-on-click="refreshData">
+                    <i class="fa fa-refresh"></i>
+                    Refresh
+                </button>
+            </div>
+
+            <!-- Filters Section -->
+            <div class="dashboard-filters">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label>Min/Max Based On</label>
+                        <select class="form-control" t-on-change="(ev) => this.onFilterChange('min_max_based_on', ev)">
+                            <option value="company" t-att-selected="state.filters.min_max_based_on === 'company'">Company</option>
+                            <option value="branch" t-att-selected="state.filters.min_max_based_on === 'branch'">Branch</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group" t-if="state.filters.min_max_based_on === 'branch'">
+                        <label>Branch</label>
+                        <select class="form-control" t-on-change="(ev) => this.onFilterChange('branch_id', ev)">
+                            <option value="">Select Branch...</option>
+                            <t t-foreach="state.branches" t-as="branch" t-key="branch.id">
+                                <option t-att-value="branch.id" t-att-selected="state.filters.branch_id == branch.id">
+                                    <t t-esc="branch.name"/>
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Start Date</label>
+                        <input type="date" class="form-control"
+                               t-att-value="state.filters.start_date"
+                               t-on-change="(ev) => this.onDateChange('start_date', ev)"/>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>End Date</label>
+                        <input type="date" class="form-control"
+                               t-att-value="state.filters.end_date"
+                               t-on-change="(ev) => this.onDateChange('end_date', ev)"/>
+                    </div>
+
+                    <div class="filter-group filter-search">
+                        <label>Search Product</label>
+                        <input type="text" class="form-control"
+                               placeholder="Search by name or code..."
+                               t-att-value="state.searchTerm"
+                               t-on-input="onSearchChange"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="card-icon products">
+                        <i class="fa fa-cubes"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-value" t-esc="summaryStats.totalProducts"/>
+                        <div class="card-label">Total Products</div>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="card-icon stock">
+                        <i class="fa fa-warehouse"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-value" t-esc="formatNumber(summaryStats.totalOnHand)"/>
+                        <div class="card-label">Total On Hand</div>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="card-icon order">
+                        <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-value" t-esc="formatNumber(summaryStats.totalToOrder)"/>
+                        <div class="card-label">Total To Order</div>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="card-icon sales">
+                        <i class="fa fa-arrow-up"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-value" t-esc="formatNumber(summaryStats.totalSales)"/>
+                        <div class="card-label">Total Sales</div>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="card-icon purchase">
+                        <i class="fa fa-arrow-down"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-value" t-esc="formatNumber(summaryStats.totalPurchases)"/>
+                        <div class="card-label">Total Purchases</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div t-if="state.loading" class="loading-spinner">
+                <i class="fa fa-spinner fa-spin fa-3x"></i>
+                <p>Loading data...</p>
+            </div>
+
+            <!-- Data Table -->
+            <div t-else="" class="dashboard-table-container">
+                <table class="table table-hover dashboard-table">
+                    <thead>
+                        <tr>
+                            <th t-on-click="() => this.sortBy('product_name')" class="sortable">
+                                Product <span t-esc="getSortIcon('product_name')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('product_code')" class="sortable">
+                                Code <span t-esc="getSortIcon('product_code')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('qty_on_hand')" class="sortable text-right">
+                                On Hand <span t-esc="getSortIcon('qty_on_hand')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('company_min_qty')" class="sortable text-right">
+                                Company Min <span t-esc="getSortIcon('company_min_qty')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('company_max_qty')" class="sortable text-right">
+                                Company Max <span t-esc="getSortIcon('company_max_qty')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('branch_min_qty')" class="sortable text-right">
+                                Branch Min <span t-esc="getSortIcon('branch_min_qty')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('branch_max_qty')" class="sortable text-right">
+                                Branch Max <span t-esc="getSortIcon('branch_max_qty')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('start_stock_qty')" class="sortable text-right">
+                                Start Stock <span t-esc="getSortIcon('start_stock_qty')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('end_stock_qty')" class="sortable text-right">
+                                End Stock <span t-esc="getSortIcon('end_stock_qty')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('sales_qty')" class="sortable text-right">
+                                Sales <span t-esc="getSortIcon('sales_qty')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('sales_return_qty')" class="sortable text-right">
+                                Sales Return <span t-esc="getSortIcon('sales_return_qty')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('purchase_qty')" class="sortable text-right">
+                                Purchase <span t-esc="getSortIcon('purchase_qty')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('purchase_return_qty')" class="sortable text-right">
+                                Purchase Return <span t-esc="getSortIcon('purchase_return_qty')"/>
+                            </th>
+                            <th t-on-click="() => this.sortBy('to_order_qty')" class="sortable text-right highlight">
+                                To Order <span t-esc="getSortIcon('to_order_qty')"/>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-if="paginatedData.length === 0">
+                            <tr>
+                                <td colspan="14" class="text-center no-data">
+                                    <i class="fa fa-inbox fa-3x"></i>
+                                    <p>No data found. Try adjusting your filters.</p>
+                                </td>
+                            </tr>
+                        </t>
+                        <t t-else="">
+                            <tr t-foreach="paginatedData" t-as="row" t-key="row.product_id">
+                                <td class="product-name">
+                                    <strong t-esc="row.product_name"/>
+                                </td>
+                                <td class="product-code">
+                                    <span class="badge badge-secondary" t-esc="row.product_code || 'N/A'"/>
+                                </td>
+                                <td class="text-right qty-cell" t-esc="formatNumber(row.qty_on_hand)"/>
+                                <td class="text-right" t-esc="formatNumber(row.company_min_qty)"/>
+                                <td class="text-right" t-esc="formatNumber(row.company_max_qty)"/>
+                                <td class="text-right" t-esc="formatNumber(row.branch_min_qty)"/>
+                                <td class="text-right" t-esc="formatNumber(row.branch_max_qty)"/>
+                                <td class="text-right" t-esc="formatNumber(row.start_stock_qty)"/>
+                                <td class="text-right" t-esc="formatNumber(row.end_stock_qty)"/>
+                                <td class="text-right sales-cell" t-esc="formatNumber(row.sales_qty)"/>
+                                <td class="text-right" t-esc="formatNumber(row.sales_return_qty)"/>
+                                <td class="text-right purchase-cell" t-esc="formatNumber(row.purchase_qty)"/>
+                                <td class="text-right" t-esc="formatNumber(row.purchase_return_qty)"/>
+                                <td class="text-right highlight-cell">
+                                    <strong t-esc="formatNumber(row.to_order_qty)"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+                <!-- Pagination -->
+                <div class="pagination-container" t-if="totalPages > 1">
+                    <div class="pagination-info">
+                        Showing <strong t-esc="(state.currentPage - 1) * state.itemsPerPage + 1"/> to
+                        <strong t-esc="Math.min(state.currentPage * state.itemsPerPage, filteredData.length)"/> of
+                        <strong t-esc="filteredData.length"/> products
+                    </div>
+                    <div class="pagination-controls">
+                        <button class="btn btn-sm btn-secondary" t-on-click="() => this.goToPage(1)" t-att-disabled="state.currentPage === 1">
+                            <i class="fa fa-angle-double-left"></i>
+                        </button>
+                        <button class="btn btn-sm btn-secondary" t-on-click="() => this.goToPage(state.currentPage - 1)" t-att-disabled="state.currentPage === 1">
+                            <i class="fa fa-angle-left"></i>
+                        </button>
+
+                        <t t-foreach="pageNumbers" t-as="page" t-key="page">
+                            <button class="btn btn-sm"
+                                    t-att-class="page === state.currentPage ? 'btn-primary' : 'btn-secondary'"
+                                    t-on-click="() => this.goToPage(page)">
+                                <t t-esc="page"/>
+                            </button>
+                        </t>
+
+                        <button class="btn btn-sm btn-secondary" t-on-click="() => this.goToPage(state.currentPage + 1)" t-att-disabled="state.currentPage === totalPages">
+                            <i class="fa fa-angle-right"></i>
+                        </button>
+                        <button class="btn btn-sm btn-secondary" t-on-click="() => this.goToPage(totalPages)" t-att-disabled="state.currentPage === totalPages">
+                            <i class="fa fa-angle-double-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

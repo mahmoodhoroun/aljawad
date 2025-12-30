@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Product Template Form View - Add Min/Max fields -->
+    <record id="product_template_form_view_inherit_replenishment" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.replenishment</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='inventory']" position="inside">
+                <group string="Replenishment Min/Max Quantities">
+                    <group>
+                        <field name="company_min_qty"/>
+                        <field name="company_max_qty"/>
+                        <!-- <field name="display_company_min_qty" readonly="1"/>
+                        <field name="display_company_max_qty" readonly="1"/> -->
+                    </group>
+                    <group>
+                        <field name="branch_min_qty"/>
+                        <field name="branch_max_qty"/>
+                        <!-- <field name="display_branch_min_qty" readonly="1"/>
+                        <field name="display_branch_max_qty" readonly="1"/> -->
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Product Variant Form View - Add Min/Max fields -->
+    <record id="product_variant_form_view_inherit_replenishment" model="ir.ui.view">
+        <field name="name">product.product.form.inherit.replenishment</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='inventory']" position="inside">
+                <group string="Replenishment Min/Max Quantities">
+                    <group>
+                        <field name="company_min_qty"/>
+                        <field name="company_max_qty"/>
+                        <field name="display_company_min_qty" readonly="1"/>
+                        <field name="display_company_max_qty" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="branch_min_qty"/>
+                        <field name="branch_max_qty"/>
+                        <field name="display_branch_min_qty" readonly="1"/>
+                        <field name="display_branch_max_qty" readonly="1"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

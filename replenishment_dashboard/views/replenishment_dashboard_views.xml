@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Dashboard Action -->
+    <record id="action_replenishment_dashboard" model="ir.actions.client">
+        <field name="name">Replenishment Dashboard</field>
+        <field name="tag">replenishment_dashboard.dashboard</field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_replenishment_dashboard_root"
+              name="Replenishment Dashboard"
+              sequence="10"
+              web_icon="replenishment_dashboard,static/description/icon.png"/>
+
+    <menuitem id="menu_replenishment_dashboard"
+              name="Dashboard"
+              parent="menu_replenishment_dashboard_root"
+              action="action_replenishment_dashboard"
+              sequence="1"/>
+</odoo>
