@@ -174,14 +174,14 @@ class ProductTemplate(models.Model):
 
     def write(self, vals):
         # Auto-generate barcode from category serial if category is changed and barcode is not provided
-        if vals.get('categ_id') and not vals.get('barcode'):
-            for record in self:
-                if not record.barcode:  # Only if current record doesn't have a barcode
-                    category = self.env['product.category'].browse(vals['categ_id'])
-                    if category:
-                        next_serial = category.get_next_serial()
-                        vals['barcode'] = str(next_serial)
-                        break  # Only set for the first record to avoid multiple increments
+        # if vals.get('categ_id') and not vals.get('barcode'):
+        #     for record in self:
+        #         if not record.barcode:  # Only if current record doesn't have a barcode
+        #             category = self.env['product.category'].browse(vals['categ_id'])
+        #             if category:
+        #                 next_serial = category.get_next_serial()
+        #                 vals['barcode'] = str(next_serial)
+        #                 break  # Only set for the first record to avoid multiple increments
 
         # if vals.get('barcode'):
         #     existing_product = self.env['product.template'].search([('barcode', '=', vals['barcode'])], limit=1)
@@ -189,12 +189,12 @@ class ProductTemplate(models.Model):
         #         raise ValidationError(_('A product with barcode %s already exists. Please use the existing product or choose a different barcode.') % vals['barcode'])
         return super(ProductTemplate, self).write(vals)
     
-    @api.onchange('categ_id')
-    def _onchange_categ_id(self):
-        for record in self:
-            if record.categ_id:
-               next_serial = record.categ_id.get_next_serial()
-               record.barcode = str(next_serial)
+    # @api.onchange('categ_id')
+    # def _onchange_categ_id(self):
+    #     for record in self:
+    #         if record.categ_id:
+    #            next_serial = record.categ_id.get_next_serial()
+    #            record.barcode = str(next_serial)
     
     @api.depends('name', 'default_code', 'categ_id.name', 'standard_price')
     def _compute_display_name(self):
