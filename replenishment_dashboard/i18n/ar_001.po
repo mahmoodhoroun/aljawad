@@ -1,0 +1,357 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* replenishment_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-05 21:30+0000\n"
+"PO-Revision-Date: 2026-01-05 21:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Branch"
+msgstr "فرع"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_product__branch_max_qty
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_template__branch_max_qty
+msgid "Branch Max"
+msgstr "الحد الاعلى للفرع"
+
+#. module: replenishment_dashboard
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_product__display_branch_max_qty
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_template__display_branch_max_qty
+msgid "Branch Max (Display)"
+msgstr "الحد الاعلى للفرع"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_product__branch_min_qty
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_template__branch_min_qty
+msgid "Branch Min"
+msgstr "الحد الأدنى للفرع"
+
+#. module: replenishment_dashboard
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_product__display_branch_min_qty
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_template__display_branch_min_qty
+msgid "Branch Min (Display)"
+msgstr "الحد الأدنى للفرع"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Code"
+msgstr ""
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Company"
+msgstr "شركة"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_product__company_max_qty
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_template__company_max_qty
+msgid "Company Max"
+msgstr "الحد الأعلى للشركة"
+
+#. module: replenishment_dashboard
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_product__display_company_max_qty
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_template__display_company_max_qty
+msgid "Company Max (Display)"
+msgstr "الحد الأعلى للشركة"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_product__company_min_qty
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_template__company_min_qty
+msgid "Company Min"
+msgstr "الحد الأدنى للشركة"
+
+#. module: replenishment_dashboard
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_product__display_company_min_qty
+#: model:ir.model.fields,field_description:replenishment_dashboard.field_product_template__display_company_min_qty
+msgid "Company Min (Display)"
+msgstr "الحد الأدنى للشركة"
+
+#. module: replenishment_dashboard
+#: model:ir.ui.menu,name:replenishment_dashboard.menu_replenishment_dashboard
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+#. module: replenishment_dashboard
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_product__display_branch_max_qty
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_template__display_branch_max_qty
+msgid "Displays branch max, inherited from parent company if not set."
+msgstr "يعرض الحد الأقصى للفروع، وهو موروث من الشركة الأم إذا لم يتم تحديده."
+
+#. module: replenishment_dashboard
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_product__display_branch_min_qty
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_template__display_branch_min_qty
+msgid "Displays branch min, inherited from parent company if not set."
+msgstr "يعرض الحد الأدنى للفرع، وهو موروث من الشركة الأم إذا لم يتم تحديده."
+
+#. module: replenishment_dashboard
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_product__display_company_max_qty
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_template__display_company_max_qty
+msgid "Displays company max, inherited from parent company if not set."
+msgstr "يعرض الحد الأقصى للشركة، وهو موروث من الشركة الأم إذا لم يتم تحديده."
+
+#. module: replenishment_dashboard
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_product__display_company_min_qty
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_template__display_company_min_qty
+msgid "Displays company min, inherited from parent company if not set."
+msgstr "يعرض الحد الأدنى للشركة، وهو موروث من الشركة الأم إذا لم يتم تحديده."
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "End Date"
+msgstr "تاريخ الإنتهاء"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "End Stock"
+msgstr "القيمة النهائية للمخزون"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Export to Excel"
+msgstr "تصدير اكسل"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Loading all data in background... (Currently showing"
+msgstr "يتم تحميل جمبيع البيانات في الخلفية ......"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Loading dashboard..."
+msgstr "يتم التحميل......"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Loading data, please wait..."
+msgstr "يتم تحميل البيانات, الرجاء الانتظار......"
+
+#. module: replenishment_dashboard
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_product__branch_max_qty
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_template__branch_max_qty
+msgid ""
+"Maximum quantity for this product at branch/location level. This value is "
+"specific to each branch within this company."
+msgstr ""
+
+#. module: replenishment_dashboard
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_product__company_max_qty
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_template__company_max_qty
+msgid ""
+"Maximum quantity for this product at company level. This value is shared "
+"across all branches in the company."
+msgstr ""
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Min/Max Based On"
+msgstr "الحد الأقصى/الأدنى بناء على "
+
+#. module: replenishment_dashboard
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_product__branch_min_qty
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_template__branch_min_qty
+msgid ""
+"Minimum quantity for this product at branch/location level. This value is "
+"specific to each branch within this company."
+msgstr ""
+
+#. module: replenishment_dashboard
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_product__company_min_qty
+#: model:ir.model.fields,help:replenishment_dashboard.field_product_template__company_min_qty
+msgid ""
+"Minimum quantity for this product at company level. This value is shared "
+"across all branches in the company."
+msgstr ""
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "No data found. Try adjusting your filters."
+msgstr "لم يتم العثور على بيانات. حاول تعديل عوامل التصفية."
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "On Hand"
+msgstr "المخزون"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+#: model:ir.model,name:replenishment_dashboard.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: replenishment_dashboard
+#: model:ir.model,name:replenishment_dashboard.model_product_product
+msgid "Product Variant"
+msgstr "متغير المنتج "
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Purchase"
+msgstr "المشتريات"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Purchase Return"
+msgstr "مرتجعات المشتريات"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Refresh"
+msgstr "تحديث"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+#: model:ir.actions.client,name:replenishment_dashboard.action_replenishment_dashboard
+#: model:ir.ui.menu,name:replenishment_dashboard.menu_replenishment_dashboard_root
+msgid "Replenishment Dashboard"
+msgstr "لوحة بيانات الحد الادنى"
+
+#. module: replenishment_dashboard
+#: model_terms:ir.ui.view,arch_db:replenishment_dashboard.product_template_form_view_inherit_replenishment
+#: model_terms:ir.ui.view,arch_db:replenishment_dashboard.product_variant_form_view_inherit_replenishment
+msgid "Replenishment Min/Max Quantities"
+msgstr ""
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Sales"
+msgstr "المبيعات"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Sales Return"
+msgstr "مرتجعات المبيعات"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Search Product"
+msgstr "البحث عن منتج"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Search by name or code..."
+msgstr "ابحث بواسطة الاسم او الكود....."
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Select Branch..."
+msgstr "اختر الفرع....."
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Showing"
+msgstr "اظهار"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Start Stock"
+msgstr "القيمة البدائية للمخزون"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "To Order"
+msgstr "الطلب"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Total On Hand"
+msgstr "الاجمالي في المخزن"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Total Products"
+msgstr "اجمالي المنتجات"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Total Purchases"
+msgstr "اجمالي المشتريات"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Total Sales"
+msgstr "اجمالي المبيعات"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "Total To Order"
+msgstr "إجمالي الطلب"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "of"
+msgstr ""
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "products"
+msgstr "منتحات"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "products)"
+msgstr "منتجات"
+
+#. module: replenishment_dashboard
+#. odoo-javascript
+#: code:addons/replenishment_dashboard/static/src/xml/replenishment_dashboard.xml:0
+msgid "to"
+msgstr ""
