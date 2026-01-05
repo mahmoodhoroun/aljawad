@@ -3,6 +3,14 @@ from odoo import http
 from odoo.http import request
 import json
 from datetime import datetime
+import io
+import csv
+
+try:
+    import xlsxwriter
+    HAS_XLSXWRITER = True
+except ImportError:
+    HAS_XLSXWRITER = False
 
 
 class ReplenishmentDashboardController(http.Controller):
@@ -16,7 +24,8 @@ class ReplenishmentDashboardController(http.Controller):
             'branch_id': company_id (if based on branch),
             'start_date': 'YYYY-MM-DD',
             'end_date': 'YYYY-MM-DD',
-            'product_ids': [list of product IDs] or None for all
+            'product_ids': [list of product IDs] or None for all,
+            'limit': integer (optional, for initial fast loading)
         }
         """
         if filters is None:
@@ -30,6 +39,7 @@ class ReplenishmentDashboardController(http.Controller):
         start_date = filters.get('start_date')
         end_date = filters.get('end_date')
         product_ids = filters.get('product_ids')
+        limit = filters.get('limit')
 
         # Determine which companies to include based on filters
         if min_max_based_on == 'branch' and branch_id:
@@ -43,6 +53,9 @@ class ReplenishmentDashboardController(http.Controller):
         product_filter = ""
         if product_ids:
             product_filter = f"AND pp.id IN ({','.join(map(str, product_ids))})"
+
+        # Add limit clause if specified
+        limit_clause = f"LIMIT {int(limit)}" if limit else ""
 
         # Main SQL query to get all data in one go
         query = f"""
@@ -172,6 +185,7 @@ class ReplenishmentDashboardController(http.Controller):
             LEFT JOIN purchase_data pd ON pl.product_id = pd.product_id
             LEFT JOIN purchase_return_data pr ON pl.product_id = pr.product_id
             ORDER BY pl.product_name
+            {limit_clause}
         """
 
         # Execute query with parameters
@@ -350,3 +364,188 @@ class ReplenishmentDashboardController(http.Controller):
             'success': True,
             'products': products
         }
+
+    @http.route('/replenishment_dashboard/export_excel', type='http', auth='user')
+    def export_excel(self, filters='{}'):
+        """Export dashboard data to Excel/CSV file."""
+        try:
+            filters = json.loads(filters)
+        except:
+            filters = {}
+
+        # Get the dashboard data using the same method
+        result = self.get_dashboard_data(filters)
+
+        if not result.get('success'):
+            return request.make_response(
+                'Error getting data',
+                headers=[('Content-Type', 'text/plain')]
+            )
+
+        data = result.get('data', [])
+
+        if HAS_XLSXWRITER:
+            return self._export_to_excel(data, filters)
+        else:
+            return self._export_to_csv(data, filters)
+
+    def _export_to_excel(self, data, filters):
+        """Export to Excel using xlsxwriter."""
+        # Create Excel file in memory
+        output = io.BytesIO()
+        workbook = xlsxwriter.Workbook(output, {'in_memory': True})
+        worksheet = workbook.add_worksheet('Replenishment Report')
+
+        # Define formats
+        header_format = workbook.add_format({
+            'bold': True,
+            'bg_color': '#4472C4',
+            'font_color': 'white',
+            'border': 1,
+            'align': 'center',
+            'valign': 'vcenter'
+        })
+
+        cell_format = workbook.add_format({
+            'border': 1,
+            'align': 'center',
+            'valign': 'vcenter'
+        })
+
+        number_format = workbook.add_format({
+            'border': 1,
+            'align': 'center',
+            'valign': 'vcenter',
+            'num_format': '0.00'
+        })
+
+        # Write headers
+        headers = [
+            'Product Code',
+            'Product Name',
+            'Qty On Hand',
+            'Start Stock',
+            'End Stock',
+            'Sales Qty',
+            'Sales Return',
+            'Purchase Qty',
+            'Purchase Return',
+            'Company Min',
+            'Company Max',
+            'Branch Min',
+            'Branch Max',
+            'To Order Qty'
+        ]
+
+        for col, header in enumerate(headers):
+            worksheet.write(0, col, header, header_format)
+
+        # Set column widths
+        worksheet.set_column(0, 0, 15)  # Product Code
+        worksheet.set_column(1, 1, 35)  # Product Name
+        worksheet.set_column(2, 13, 12)  # All other columns
+
+        # Write data
+        for row_idx, row_data in enumerate(data, start=1):
+            worksheet.write(row_idx, 0, row_data.get('product_code', ''), cell_format)
+            worksheet.write(row_idx, 1, row_data.get('product_name', ''), cell_format)
+            worksheet.write(row_idx, 2, row_data.get('qty_on_hand', 0), number_format)
+            worksheet.write(row_idx, 3, row_data.get('start_stock_qty', 0), number_format)
+            worksheet.write(row_idx, 4, row_data.get('end_stock_qty', 0), number_format)
+            worksheet.write(row_idx, 5, row_data.get('sales_qty', 0), number_format)
+            worksheet.write(row_idx, 6, row_data.get('sales_return_qty', 0), number_format)
+            worksheet.write(row_idx, 7, row_data.get('purchase_qty', 0), number_format)
+            worksheet.write(row_idx, 8, row_data.get('purchase_return_qty', 0), number_format)
+            worksheet.write(row_idx, 9, row_data.get('company_min_qty', 0), number_format)
+            worksheet.write(row_idx, 10, row_data.get('company_max_qty', 0), number_format)
+            worksheet.write(row_idx, 11, row_data.get('branch_min_qty', 0), number_format)
+            worksheet.write(row_idx, 12, row_data.get('branch_max_qty', 0), number_format)
+            worksheet.write(row_idx, 13, row_data.get('to_order_qty', 0), number_format)
+
+        # Add filter info at the bottom
+        info_row = len(data) + 3
+        info_format = workbook.add_format({'bold': True, 'italic': True})
+
+        worksheet.write(info_row, 0, 'Export Info:', info_format)
+        worksheet.write(info_row + 1, 0, f"Export Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        worksheet.write(info_row + 2, 0, f"Date Range: {filters.get('start_date', 'N/A')} to {filters.get('end_date', 'N/A')}")
+        worksheet.write(info_row + 3, 0, f"Min/Max Based On: {filters.get('min_max_based_on', 'company').title()}")
+
+        workbook.close()
+        output.seek(0)
+
+        # Generate filename
+        filename = f"Replenishment_Report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
+
+        # Return file
+        return request.make_response(
+            output.read(),
+            headers=[
+                ('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'),
+                ('Content-Disposition', f'attachment; filename="{filename}"')
+            ]
+        )
+
+    def _export_to_csv(self, data, filters):
+        """Export to CSV format (Excel compatible)."""
+        output = io.StringIO()
+        writer = csv.writer(output)
+
+        # Write headers
+        headers = [
+            'Product Code',
+            'Product Name',
+            'Qty On Hand',
+            'Start Stock',
+            'End Stock',
+            'Sales Qty',
+            'Sales Return',
+            'Purchase Qty',
+            'Purchase Return',
+            'Company Min',
+            'Company Max',
+            'Branch Min',
+            'Branch Max',
+            'To Order Qty'
+        ]
+        writer.writerow(headers)
+
+        # Write data
+        for row_data in data:
+            writer.writerow([
+                row_data.get('product_code', ''),
+                row_data.get('product_name', ''),
+                f"{row_data.get('qty_on_hand', 0):.2f}",
+                f"{row_data.get('start_stock_qty', 0):.2f}",
+                f"{row_data.get('end_stock_qty', 0):.2f}",
+                f"{row_data.get('sales_qty', 0):.2f}",
+                f"{row_data.get('sales_return_qty', 0):.2f}",
+                f"{row_data.get('purchase_qty', 0):.2f}",
+                f"{row_data.get('purchase_return_qty', 0):.2f}",
+                f"{row_data.get('company_min_qty', 0):.2f}",
+                f"{row_data.get('company_max_qty', 0):.2f}",
+                f"{row_data.get('branch_min_qty', 0):.2f}",
+                f"{row_data.get('branch_max_qty', 0):.2f}",
+                f"{row_data.get('to_order_qty', 0):.2f}",
+            ])
+
+        # Add export info
+        writer.writerow([])
+        writer.writerow(['Export Info:'])
+        writer.writerow([f"Export Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"])
+        writer.writerow([f"Date Range: {filters.get('start_date', 'N/A')} to {filters.get('end_date', 'N/A')}"])
+        writer.writerow([f"Min/Max Based On: {filters.get('min_max_based_on', 'company').title()}"])
+
+        output.seek(0)
+
+        # Generate filename
+        filename = f"Replenishment_Report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+
+        # Return file
+        return request.make_response(
+            output.getvalue(),
+            headers=[
+                ('Content-Type', 'text/csv'),
+                ('Content-Disposition', f'attachment; filename="{filename}"')
+            ]
+        )

@@ -32,9 +32,14 @@
     font-size: 32px;
 }
 
-.btn-refresh {
+.dashboard-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-refresh,
+.btn-export {
     background: white;
-    color: #667eea;
     border: none;
     padding: 10px 20px;
     border-radius: 6px;
@@ -45,7 +50,16 @@
     gap: 8px;
 }
 
-.btn-refresh:hover {
+.btn-refresh {
+    color: #667eea;
+}
+
+.btn-export {
+    color: #28a745;
+}
+
+.btn-refresh:hover,
+.btn-export:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background: #f0f0f0;
@@ -355,6 +369,16 @@
     .dashboard-header {
         flex-direction: column;
         gap: 15px;
+    }
+
+    .dashboard-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-refresh,
+    .btn-export {
+        flex: 1;
     }
 
     .filter-row {

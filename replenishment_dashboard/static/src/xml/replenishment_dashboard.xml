@@ -9,10 +9,16 @@
                     <i class="fa fa-bar-chart"></i>
                     Replenishment Dashboard
                 </h1>
-                <button class="btn btn-primary btn-refresh" t-on-click="refreshData">
-                    <i class="fa fa-refresh"></i>
-                    Refresh
-                </button>
+                <div class="dashboard-actions">
+                    <button class="btn btn-success btn-export" t-on-click="exportToExcel">
+                        <i class="fa fa-file-excel-o"></i>
+                        Export to Excel
+                    </button>
+                    <button class="btn btn-primary btn-refresh" t-on-click="refreshData">
+                        <i class="fa fa-refresh"></i>
+                        Refresh
+                    </button>
+                </div>
             </div>
 
             <!-- Filters Section -->
@@ -60,6 +66,12 @@
                                t-on-input="onSearchChange"/>
                     </div>
                 </div>
+            </div>
+
+            <!-- Loading Background Data Message -->
+            <div t-if="state.backgroundLoading" class="alert alert-info" style="margin-bottom: 20px; text-align: center;">
+                <i class="fa fa-spinner fa-spin"></i>
+                Loading all data in background... (Currently showing <t t-esc="state.data.length"/> products)
             </div>
 
             <!-- Summary Cards -->
@@ -116,13 +128,14 @@
             </div>
 
             <!-- Loading Spinner -->
-            <div t-if="state.loading" class="loading-spinner">
+            <div t-if="state.initialLoading || (state.data.length === 0 and !state.loading)" class="loading-spinner">
                 <i class="fa fa-spinner fa-spin fa-3x"></i>
-                <p>Loading data...</p>
+                <p t-if="state.initialLoading">Loading dashboard...</p>
+                <p t-else="">Loading data, please wait...</p>
             </div>
 
             <!-- Data Table -->
-            <div t-else="" class="dashboard-table-container">
+            <div t-elif="state.data.length > 0" class="dashboard-table-container">
                 <table class="table table-hover dashboard-table">
                     <thead>
                         <tr>
@@ -236,6 +249,14 @@
                             <i class="fa fa-angle-double-right"></i>
                         </button>
                     </div>
+                </div>
+            </div>
+
+            <!-- No Data State (only after loading is complete) -->
+            <div t-else="" class="dashboard-table-container">
+                <div class="no-data" style="padding: 60px 20px; text-align: center;">
+                    <i class="fa fa-inbox fa-3x" style="color: #dee2e6; margin-bottom: 20px;"></i>
+                    <p style="margin: 0; font-size: 16px; color: #6c757d;">No data found. Try adjusting your filters.</p>
                 </div>
             </div>
         </div>

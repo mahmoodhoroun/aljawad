@@ -22,6 +22,8 @@ class ReplenishmentDashboard extends Component {
             },
             branches: [],
             loading: false,
+            initialLoading: true,
+            backgroundLoading: false,
             sortField: 'product_name',
             sortOrder: 'asc',
             searchTerm: '',
@@ -31,7 +33,10 @@ class ReplenishmentDashboard extends Component {
 
         onWillStart(async () => {
             await this.loadBranches();
-            await this.loadData();
+            // Load initial data quickly (first 100 products)
+            await this.loadInitialData();
+            // Then load all data in the background
+            this.loadFullDataInBackground();
         });
     }
 
@@ -49,6 +54,42 @@ class ReplenishmentDashboard extends Component {
         const result = await rpc('/replenishment_dashboard/branches', {});
         if (result.success) {
             this.state.branches = result.branches;
+        }
+    }
+
+    async loadInitialData() {
+        this.state.initialLoading = true;
+        try {
+            const result = await rpc('/replenishment_dashboard/data', {
+                filters: { ...this.state.filters, limit: 100 }
+            });
+            if (result.success) {
+                this.state.data = result.data;
+            }
+        } catch (error) {
+            console.error('Error loading initial dashboard data:', error);
+        } finally {
+            this.state.initialLoading = false;
+        }
+    }
+
+    async loadFullDataInBackground() {
+        // Small delay to ensure UI is rendered first
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        this.state.backgroundLoading = true;
+        try {
+            const result = await rpc('/replenishment_dashboard/data', {
+                filters: this.state.filters
+            });
+            if (result.success) {
+                this.state.data = result.data;
+                console.log(`Loaded ${result.data.length} products in total`);
+            }
+        } catch (error) {
+            console.error('Error loading full dashboard data:', error);
+        } finally {
+            this.state.backgroundLoading = false;
         }
     }
 
@@ -191,6 +232,12 @@ class ReplenishmentDashboard extends Component {
         if (!this.state.filters.branch_id) return '';
         const branch = this.state.branches.find(b => b.id == this.state.filters.branch_id);
         return branch ? branch.name : '';
+    }
+
+    exportToExcel() {
+        const filtersJson = JSON.stringify(this.state.filters);
+        const url = `/replenishment_dashboard/export_excel?filters=${encodeURIComponent(filtersJson)}`;
+        window.open(url, '_blank');
     }
 }
 
